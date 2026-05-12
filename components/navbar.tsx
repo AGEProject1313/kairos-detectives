@@ -85,7 +85,7 @@ export default function Navbar() {
 
             <button
               onClick={() => setOpen(!open)}
-              className="relative z-50 flex h-12 w-12 items-center justify-center rounded-full bg-red-500 text-black md:hidden"
+              className="flex h-12 w-12 items-center justify-center rounded-full bg-red-500 text-black md:hidden"
               aria-label="Open menu"
             >
 
