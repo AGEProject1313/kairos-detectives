@@ -35,7 +35,7 @@ export default function Navbar() {
 
           {/* DESKTOP NAV */}
 
-          <nav className="hidden items-center gap-10 md:flex">
+          <nav className="hidden">
 
             <Link
               href="/it"
@@ -80,7 +80,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setOpen(!open)}
-            className="relative z-50 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-500 text-black md:hidden"
+            className="relative z-50 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-500 text-black"
             aria-label="Open menu"
           >
 
