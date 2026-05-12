@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -17,6 +16,7 @@ export default function Navbar() {
           {/* LOGO */}
 
           <Link href="/it" className="relative z-50">
+
             <Image
               src="/kairos-logo-white.png"
               alt="Kairos Detectives"
@@ -24,6 +24,7 @@ export default function Navbar() {
               height={40}
               className="h-auto w-[90px] md:w-[120px]"
             />
+
           </Link>
 
           {/* DESKTOP MENU */}
@@ -60,7 +61,7 @@ export default function Navbar() {
 
           </nav>
 
-          {/* CTA DESKTOP */}
+          {/* DESKTOP CTA */}
 
           <Link
             href="/it/cases/verita-sospesa"
@@ -73,16 +74,20 @@ export default function Navbar() {
 
           <button
             onClick={() => setOpen(!open)}
-            className="relative z-50 text-white md:hidden"
+            className="relative z-50 flex h-12 w-12 items-center justify-center rounded-full bg-red-500 text-black md:hidden"
           >
-            {open ? <X size={28} /> : <Menu size={28} />}
+
+            <span className="text-2xl font-black">
+              {open ? "✕" : "☰"}
+            </span>
+
           </button>
 
         </div>
 
       </header>
 
-      {/* MOBILE MENU */}
+      {/* MOBILE OVERLAY */}
 
       <div
         className={`fixed inset-0 z-40 flex flex-col items-center justify-center gap-10 bg-black/95 backdrop-blur-2xl transition-all duration-500 ${
