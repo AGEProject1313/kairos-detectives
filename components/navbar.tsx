@@ -33,7 +33,6 @@ export default function Navbar() {
           {/* DESKTOP NAV */}
 
           <nav className="hidden items-center gap-10 md:flex">
-
             <Link
               href="/it"
               className="text-sm uppercase tracking-[0.3em] text-zinc-300 transition hover:text-white"
@@ -61,46 +60,33 @@ export default function Navbar() {
             >
               Contatti
             </Link>
-
           </nav>
 
-          {/* RIGHT SIDE */}
+          {/* DESKTOP CTA */}
 
-          <div className="flex items-center gap-3">
+          <Link
+            href="/it/cases/verita-sospesa"
+            className="hidden rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition duration-300 hover:scale-105 lg:block"
+          >
+            Acquista
+          </Link>
 
-            {/* DESKTOP CTA */}
+          {/* MOBILE BUTTON */}
 
-            <div className="hidden lg:block">
-
-              <Link
-                href="/it/cases/verita-sospesa"
-                className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition duration-300 hover:scale-105"
-              >
-                Acquista
-              </Link>
-
-            </div>
-
-            {/* MOBILE BUTTON */}
-
-            <button
-              onClick={() => setOpen(!open)}
-              className="flex h-12 w-12 items-center justify-center rounded-full bg-red-500 text-black md:hidden"
-              aria-label="Open menu"
-            >
-
-              <span className="text-2xl font-black leading-none">
-                {open ? "✕" : "☰"}
-              </span>
-
-            </button>
-
-          </div>
+          <button
+            onClick={() => setOpen(!open)}
+            className="relative z-50 flex h-12 w-12 items-center justify-center rounded-full bg-red-500 text-black md:hidden"
+            aria-label="Open menu"
+          >
+            <span className="text-2xl font-black leading-none">
+              {open ? "✕" : "☰"}
+            </span>
+          </button>
 
         </div>
       </header>
 
-      {/* MOBILE OVERLAY */}
+      {/* MOBILE MENU */}
 
       <div
         className={`fixed inset-0 z-40 flex flex-col items-center justify-center gap-10 bg-black/95 backdrop-blur-2xl transition-all duration-500 ${
@@ -109,7 +95,6 @@ export default function Navbar() {
             : "pointer-events-none opacity-0"
         }`}
       >
-
         <Link
           href="/it"
           onClick={() => setOpen(false)}
@@ -149,7 +134,6 @@ export default function Navbar() {
         >
           Acquista
         </Link>
-
       </div>
     </>
   );
