@@ -9,13 +9,18 @@ export default function Navbar() {
 
   return (
     <>
+      {/* HEADER */}
+
       <header className="fixed top-0 z-50 w-full px-4 pt-4 md:px-8">
 
-        <div className="mx-auto flex max-w-7xl items-center justify-between rounded-2xl border border-white/10 bg-black/60 px-5 py-4 backdrop-blur-2xl">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 rounded-2xl border border-white/10 bg-black/60 px-5 py-4 backdrop-blur-2xl">
 
           {/* LOGO */}
 
-          <Link href="/it" className="relative z-50">
+          <Link
+            href="/it"
+            className="relative z-50 flex-shrink-0"
+          >
 
             <Image
               src="/kairos-logo-white.png"
@@ -23,11 +28,12 @@ export default function Navbar() {
               width={120}
               height={40}
               className="h-auto w-[90px] md:w-[120px]"
+              priority
             />
 
           </Link>
 
-          {/* DESKTOP MENU */}
+          {/* DESKTOP NAV */}
 
           <nav className="hidden items-center gap-10 md:flex">
 
@@ -65,19 +71,20 @@ export default function Navbar() {
 
           <Link
             href="/it/cases/verita-sospesa"
-            className="hidden rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:scale-105 md:block"
+            className="hidden rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition duration-300 hover:scale-105 lg:block"
           >
             Acquista
           </Link>
 
-          {/* MOBILE BUTTON */}
+          {/* MOBILE MENU BUTTON */}
 
           <button
             onClick={() => setOpen(!open)}
-            className="relative z-50 flex h-12 w-12 items-center justify-center rounded-full bg-red-500 text-black md:hidden"
+            className="relative z-50 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-500 text-black md:hidden"
+            aria-label="Open menu"
           >
 
-            <span className="text-2xl font-black">
+            <span className="text-2xl font-black leading-none">
               {open ? "✕" : "☰"}
             </span>
 
