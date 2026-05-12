@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.kairosdetectives.com"),
 
