@@ -12,8 +12,7 @@ export default function Navbar() {
       {/* HEADER */}
 
       <header className="fixed top-0 z-50 w-full px-4 pt-4 md:px-8">
-
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 rounded-2xl border border-white/10 bg-black/60 px-5 py-4 backdrop-blur-2xl">
+        <div className="mx-auto flex max-w-7xl items-center justify-between rounded-2xl border border-white/10 bg-black/60 px-5 py-4 backdrop-blur-2xl">
 
           {/* LOGO */}
 
@@ -21,7 +20,6 @@ export default function Navbar() {
             href="/it"
             className="relative z-50 flex-shrink-0"
           >
-
             <Image
               src="/kairos-logo-white.png"
               alt="Kairos Detectives"
@@ -30,12 +28,11 @@ export default function Navbar() {
               className="h-auto w-[90px] md:w-[120px]"
               priority
             />
-
           </Link>
 
           {/* DESKTOP NAV */}
 
-          <nav className="hidden">
+          <nav className="hidden items-center gap-10 md:flex">
 
             <Link
               href="/it"
@@ -67,31 +64,40 @@ export default function Navbar() {
 
           </nav>
 
-          {/* DESKTOP CTA */}
+          {/* RIGHT SIDE */}
 
-          <Link
-            href="/it/cases/verita-sospesa"
-            className="hidden rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition duration-300 hover:scale-105 lg:block"
-          >
-            Acquista
-          </Link>
+          <div className="flex items-center gap-3">
 
-          {/* MOBILE MENU BUTTON */}
+            {/* DESKTOP CTA */}
 
-          <button
-            onClick={() => setOpen(!open)}
-            className="relative z-50 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-500 text-black"
-            aria-label="Open menu"
-          >
+            <div className="hidden lg:block">
 
-            <span className="text-2xl font-black leading-none">
-              {open ? "✕" : "☰"}
-            </span>
+              <Link
+                href="/it/cases/verita-sospesa"
+                className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition duration-300 hover:scale-105"
+              >
+                Acquista
+              </Link>
 
-          </button>
+            </div>
+
+            {/* MOBILE BUTTON */}
+
+            <button
+              onClick={() => setOpen(!open)}
+              className="relative z-50 flex h-12 w-12 items-center justify-center rounded-full bg-red-500 text-black md:hidden"
+              aria-label="Open menu"
+            >
+
+              <span className="text-2xl font-black leading-none">
+                {open ? "✕" : "☰"}
+              </span>
+
+            </button>
+
+          </div>
 
         </div>
-
       </header>
 
       {/* MOBILE OVERLAY */}
