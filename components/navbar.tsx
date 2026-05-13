@@ -9,30 +9,30 @@ export default function Navbar() {
 
   return (
     <>
-      {/* HEADER */}
+      <header className="fixed top-0 z-50 w-full px-3 pt-3">
 
-      <header className="fixed top-0 z-50 w-full px-4 pt-4 md:px-8">
-        <div className="mx-auto flex max-w-7xl items-center justify-between rounded-2xl border border-white/10 bg-black/60 px-5 py-4 backdrop-blur-2xl">
+        <div className="mx-auto flex max-w-7xl items-center justify-between rounded-2xl border border-white/10 bg-black/70 px-4 py-3 backdrop-blur-2xl">
 
           {/* LOGO */}
 
           <Link
             href="/it"
-            className="relative z-50 flex-shrink-0"
+            className="flex-shrink-0"
           >
             <Image
               src="/kairos-logo-white.png"
               alt="Kairos Detectives"
-              width={120}
+              width={110}
               height={40}
-              className="h-auto w-[90px] md:w-[120px]"
+              className="h-auto w-[82px] md:w-[110px]"
               priority
             />
           </Link>
 
           {/* DESKTOP NAV */}
 
-          <nav className="hidden items-center gap-10 md:flex">
+          <nav className="hidden md:flex items-center gap-10">
+
             <Link
               href="/it"
               className="text-sm uppercase tracking-[0.3em] text-zinc-300 transition hover:text-white"
@@ -60,41 +60,50 @@ export default function Navbar() {
             >
               Contatti
             </Link>
+
           </nav>
 
-          {/* DESKTOP CTA */}
+          {/* RIGHT SIDE */}
 
-          <Link
-            href="/it/cases/verita-sospesa"
-            className="hidden rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition duration-300 hover:scale-105 lg:block"
-          >
-            Acquista
-          </Link>
+          <div className="flex items-center gap-3">
 
-          {/* MOBILE BUTTON */}
+            {/* DESKTOP CTA */}
 
-          <button
-            onClick={() => setOpen(!open)}
-            className="relative z-50 flex h-12 w-12 items-center justify-center rounded-full bg-red-500 text-black md:hidden"
-            aria-label="Open menu"
-          >
-            <span className="text-2xl font-black leading-none">
-              {open ? "✕" : "☰"}
-            </span>
-          </button>
+            <Link
+              href="/it/cases/verita-sospesa"
+              className="hidden md:flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:scale-105"
+            >
+              Acquista
+            </Link>
+
+            {/* MOBILE MENU */}
+
+            <button
+              onClick={() => setOpen(!open)}
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-black md:hidden"
+              aria-label="Open menu"
+            >
+              <span className="text-2xl leading-none">
+                {open ? "✕" : "☰"}
+              </span>
+            </button>
+
+          </div>
 
         </div>
+
       </header>
 
-      {/* MOBILE MENU */}
+      {/* MOBILE OVERLAY */}
 
       <div
-        className={`fixed inset-0 z-40 flex flex-col items-center justify-center gap-10 bg-black/95 backdrop-blur-2xl transition-all duration-500 ${
+        className={`fixed inset-0 z-40 flex flex-col items-center justify-center gap-10 bg-black/95 backdrop-blur-2xl transition-all duration-300 ${
           open
             ? "pointer-events-auto opacity-100"
             : "pointer-events-none opacity-0"
         }`}
       >
+
         <Link
           href="/it"
           onClick={() => setOpen(false)}
@@ -130,10 +139,11 @@ export default function Navbar() {
         <Link
           href="/it/cases/verita-sospesa"
           onClick={() => setOpen(false)}
-          className="mt-4 rounded-full bg-white px-8 py-4 text-lg font-semibold text-black"
+          className="rounded-full bg-white px-8 py-4 text-lg font-semibold text-black"
         >
           Acquista
         </Link>
+
       </div>
     </>
   );

@@ -12,9 +12,10 @@
 
 html,
 body {
+  width: 100%;
+  overflow-x: hidden;
   background: #000;
   color: #fff;
-  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
@@ -30,7 +31,4 @@ h5,
 h6 {
   font-family: var(--font-title);
   letter-spacing: 0.02em;
-  body {
-  background: red !important;
-}
 }

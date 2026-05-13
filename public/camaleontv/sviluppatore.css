@@ -1,0 +1,115 @@
+/* Stile base */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo img {
+    width: 150px;
+}
+
+.avatar img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+h1 {
+    color: #E50914;
+    font-size: 2em;
+    text-align: center;
+    flex-grow: 1;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    text-align: center;
+}
+
+.dev-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    font-size: 1em;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #E50914;
+    color: #fff;
+    border: none;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #b00710;
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #E50914;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: #000;
+    color: #777;
+    font-size: 0.9em;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Ottimizzazione per mobile (schermi inferiori a 768px) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo img {
+        width: 120px; /* Riduzione logo su mobile */
+    }
+
+    .avatar img {
+        width: 60px;
+        height: 60px; /* Riduzione avatar su mobile */
+    }
+
+    h1 {
+        font-size: 1.5em; /* Riduzione dimensione del titolo su mobile */
+    }
+
+    input[type="text"] {
+        width: 250px; /* Riduzione dimensione della casella di testo su mobile */
+    }
+}

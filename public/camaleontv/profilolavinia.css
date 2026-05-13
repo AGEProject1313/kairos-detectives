@@ -1,0 +1,139 @@
+/* Stile base */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000;
+}
+
+.logo img {
+    width: 150px;
+}
+
+.avatar {
+    margin-left: auto;
+}
+
+.avatar img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+.film-row {
+    margin-bottom: 40px;
+}
+
+.film-row h2 {
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    color: #E50914;
+}
+
+.film-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+}
+
+.film-scroll img {
+    width: 150px;
+    height: 225px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.film-scroll img:hover {
+    transform: scale(1.1);
+}
+
+/* Stile per il pulsante Modalità Sviluppatore */
+.dev-button-container {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative; /* Manteniamo relative per evitare sovrapposizioni */
+    bottom: 0;
+}
+
+.dev-button {
+    background-color: #E50914;
+    color: #fff;
+    padding: 15px 25px;
+    font-size: 1em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    position: relative;
+    z-index: 10;
+}
+
+.dev-button:hover {
+    background-color: #b00710;
+}
+
+/* Footer */
+footer {
+    padding-top: 0px;
+    padding-bottom: 20px; /* Aggiungi uno spazio extra sotto il footer per distanziare meglio */
+    text-align: center;
+    font-size: 0.9em;
+    background-color: #000;
+    color: #777;
+}
+
+/* Ottimizzazione per mobile (schermi inferiori a 768px) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .logo img {
+        width: 120px; /* Logo ridotto per mobile */
+    }
+
+    .avatar img {
+        width: 60px;
+        height: 60px; /* Avatar ridotto per mobile */
+    }
+
+    .film-scroll img {
+        width: 120px;
+        height: 180px; /* Dimensioni dei film ridotte per mobile */
+    }
+
+    .film-row h2 {
+        font-size: 1.3em; /* Riduzione del titolo per mobile */
+    }
+
+    .dev-button-container {
+        padding-bottom: 15px;
+    }
+
+    footer {
+        font-size: 0.8em; /* Footer ridotto per mobile */
+        padding-bottom: 20px; /* Margine per evitare che finisca sotto la hotbar di Safari */
+    }
+}

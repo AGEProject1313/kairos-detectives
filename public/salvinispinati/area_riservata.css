@@ -1,0 +1,243 @@
+/* Generale */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #F5F5F5;
+    color: #333;
+}
+
+header {
+    background-color: #a3171d;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+    border-radius: 50%;
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li {
+    display: inline-block;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a.active {
+    text-decoration: underline;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Container */
+.container {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Sezione di login */
+.login-form {
+    max-width: 350px;
+    margin: 0 auto;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Aggiungi una larghezza fissa uguale per tutti i campi di testo */
+.login-form input {
+    width: 100%;
+    max-width: 320px; /* Imposta una larghezza massima uguale per tutti i campi */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+/* Posizione relativa per il div che contiene l'input e il pulsante */
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.input-container input {
+    width: 100%;
+    max-width: 320px; /* Imposta la stessa larghezza del campo email */
+}
+
+/* Aggiungi una larghezza fissa anche al pulsante del suggerimento */
+.hint-button {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Stile per il suggerimento */
+.hint {
+    display: none;
+    font-size: 12px;
+    color: #555;
+    margin-top: 5px;
+}
+
+.login-form button {
+    width: 100%;
+    max-width: 320px;
+    padding: 10px;
+    background-color: #a3171d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login-form button:hover {
+    background-color: #861013;
+}
+
+/* Sezione documenti */
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.profile img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.profile span {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+button {
+    background-color: #a3171d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #861013;
+}
+
+.document-list {
+    margin-top: 20px;
+}
+
+.document-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.document-list li {
+    background-color: #f4f4f4;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.document-list li:hover {
+    background-color: #e0e0e0;
+}
+
+.document-preview img {
+    max-width: 100%;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Nasconde gli elementi quando non visibili */
+.hidden {
+    display: none;
+}
+
+/* Footer */
+footer {
+    background-color: #a3171d;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    font-size: 16px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Ottimizzazione per mobile */
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+    }
+
+    .profile {
+        flex-direction: column;
+    }
+
+    .login-form {
+        max-width: 90%;
+    }
+
+    .input-container {
+        flex-direction: row;
+    }
+
+    .login-form input {
+        max-width: 100%;
+    }
+}

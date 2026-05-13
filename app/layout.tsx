@@ -5,6 +5,7 @@ export const viewport = {
   width: "device-width",
   initialScale: 1,
 };
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.kairosdetectives.com"),
 
@@ -65,10 +66,9 @@ export const metadata: Metadata = {
   },
 
   icons: {
-  icon: "/favicon.ico",
-  apple: "/apple-touch-icon.png",
-},
-
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({

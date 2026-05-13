@@ -8,6 +8,8 @@ import Navbar from "@/components/navbar";
 import { cases } from "@/data/cases";
 
 export default function HomePage() {
+  console.log("HOME CLIENT REALE");
+  
   const featuredCase = cases[0];
 
   return (
@@ -332,6 +334,48 @@ export default function HomePage() {
         </div>
 
       </section>
+
+{/* INSTAGRAM */}
+
+<section className="relative px-6 pb-24 md:px-8">
+
+  <div className="mx-auto max-w-7xl overflow-hidden rounded-[32px] border border-white/10 bg-white/[0.03] p-8 backdrop-blur-2xl md:p-14">
+
+    <div className="flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-center">
+
+      <div>
+
+        <span className="text-[11px] uppercase tracking-[0.45em] text-red-500 md:text-sm">
+          Social Feed
+        </span>
+
+        <h2 className="mt-4 text-4xl uppercase leading-none tracking-[-0.04em] md:text-6xl">
+          FOLLOW THE
+          <br />
+          INVESTIGATION
+        </h2>
+
+        <p className="mt-6 max-w-xl text-sm leading-relaxed text-zinc-400 md:text-lg">
+          Dietro le quinte, nuovi dossier, contenuti cinematici
+          e aggiornamenti sui prossimi casi Kairos Detectives.
+        </p>
+
+      </div>
+
+      <a
+        href="https://www.instagram.com/kairosdetectives/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="rounded-full border border-white/10 bg-white px-10 py-5 text-sm font-semibold uppercase tracking-[0.25em] text-black transition duration-300 hover:scale-105"
+      >
+        Follow Instagram
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
     <Footer />
     </main>
   );

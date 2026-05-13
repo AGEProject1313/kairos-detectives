@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richiedi Sopralluogo - Polizia Statale di Firenze</title>
+    <link rel="stylesheet" href="caso_omicidio.css">
+    <script defer src="caso_omicidio.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="logopolizia.png" alt="Logo Polizia Statale" />
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="area_riservata.html">Area Riservata</a></li>
+                    <li><a href="contatti.html">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="victimItemsSection" class="hidden-section">
+            <h3>Reperti sulla scena del crimine:</h3>
+            <div class="request-options">
+                <button id="victimItemsBtn" class="victim-items-btn">Apri immagine</button>
+            </div>
+        </section>        
+        <!-- Elenco dei nomi delle persone -->
+        <section class="names-section">
+            <h2>Seleziona una persona:</h2>
+            <div class="person-options">
+                <button class="person-btn" data-person="Massimo">Massimo Belcastro</button>
+                <button class="person-btn" data-person="Alessia">Alessia Belcastro</button>
+                <button class="person-btn" data-person="Serge">Serge Renoir</button>
+                <button class="person-btn" data-person="Paolo">Paolo Bonetti</button>
+                <button class="person-btn" data-person="Alina">Alina Daarie</button>
+                <button class="person-btn" data-person="Silvana">Silvana Conti</button>
+                <button class="person-btn" data-person="Lavinia">Lavinia Morisio</button>
+                <button class="person-btn" data-person="Lorenzo">Lorenzo Bartoli</button>
+                <button class="person-btn" data-person="Arturo">Arturo Spinati</button>
+            </div>
+        </section>
+
+        <!-- Sezione nascosta per le opzioni dopo aver selezionato una persona -->
+        <section id="personDetailsSection" class="hidden-section">
+            <h3>Richiedi informazioni per: <span id="selectedPerson"></span></h3>
+            <div class="request-options">
+                <button id="requestInterrogatorio">Interrogatorio</button>
+                <button id="requestPrecedenti">Precedenti penali</button>
+                <button id="requestDocumenti">Documenti depositati</button>
+            </div>
+
+            <!-- Lettore audio visibile sin dall'inizio -->
+            <audio id="audioPlayer" controls>
+                <source id="audioSource" src="" type="audio/mp3">
+                Il tuo browser non supporta l'elemento audio.
+            </audio>
+
+            <div id="result" class="alert"></div>
+        </section>
+
+        <!-- Sezione sopralluogo con suo riquadro -->
+        <section id="sopralluogoSection" class="hidden-section">
+            <h3>Richiedi sopralluogo:</h3>
+            <div id="locations">
+                <div class="location-row">
+                    <button class="location-btn" data-location="camerapatronale.png">Camera Patronale</button>
+                    <button class="location-btn" data-location="camerasilvana.png">Camera Silvana</button>
+                    <button class="location-btn" data-location="cameraalessia.png">Camera Alessia</button>
+                </div>
+                <div class="location-row">
+                    <button class="location-btn" data-location="capanno.jpeg">Capanno</button>
+                    <button class="location-btn" data-location="cucina.png">Cucina</button>
+                    <button class="location-btn" data-location="cameraserge.png">Camera Serge</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="esamiSpecificiSection" class="hidden-section">
+            <h3>Richiedi esami specifici:</h3>
+            <div id="examButtons">
+                <button id="requestEsameAutoptico">Richiedi esame autoptico</button>
+                <button id="requestEsameTossicologico">Richiedi esame tossicologico</button>
+            </div>
+            <div id="esameAutopticoMessage" class="alert" style="display: none;">Non ci sono elementi per richiedere questo tipo di esame.</div>
+            <div id="esameTossicologicoSection" style="display: none;">
+                <label for="chemicalFormulaInput">Inserisci la formula chimica della sostanza che stai ricercando:</label>
+                <input type="text" id="chemicalFormulaInput" placeholder="Inserisci formula chimica">
+                <button id="submitFormula">Invia</button>
+                <div id="esameTossicologicoMessage" class="alert" style="display: none;"></div>
+            </div>
+        </section>        
+
+        <!-- Contenitore per il testo nascosto (per esempio precedenti penali) -->
+        <div id="textContainer" class="hidden-section" style="display: none;"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Direzione di Polizia Statale di Firenze | Via Torricelli 141, Firenze</p>
+        <p>Disclaimer: Questo sito è una simulazione creata esclusivamente per scopi ludici e fa parte del gioco da tavolo Kairos Detectives. I contenuti, le informazioni e i servizi presenti su questa pagina sono fittizi e non rappresentano entità, organizzazioni o individui reali. Qualsiasi somiglianza con eventi, persone o aziende esistenti è puramente casuale.</p>
+    </footer>
+</body>
+</html>
