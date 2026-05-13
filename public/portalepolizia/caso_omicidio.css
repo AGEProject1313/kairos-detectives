@@ -1,335 +1,322 @@
-/* Stile generale */ 
-body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    margin: 0;
-    padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    box-sizing:border-box;
 }
 
-/* Header */
-header {
-    background-color: #003366;
-    color: #ffffff;
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+html,
+body{
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
 }
 
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap; /* Permette di adattarsi a schermi più piccoli */
-    max-width: 1200px;
-    margin: 0 auto;
+body{
+    font-family:'Inter',sans-serif;
+    background:
+        linear-gradient(rgba(5,10,18,0.92),rgba(5,10,18,0.94)),
+        url('https://images.unsplash.com/photo-1521790797524-b2497295b8a0?q=80&w=2070&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    color:#dfe7f2;
+    min-height:100vh;
 }
 
-.logo img {
-    width: 150px;
-    height: auto;
-    margin-right: 20px;
+/* HEADER */
+
+header{
+    background:
+        linear-gradient(180deg,#07111f 0%,#0d1d34 100%);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.45);
 }
 
-nav {
-    flex-grow: 1;
+.header-content{
+    width:100%;
+    max-width:1450px;
+    margin:0 auto;
+    padding:18px 32px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
 }
 
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    flex-wrap: wrap; /* Permette al menu di adattarsi a schermi più piccoli */
+.logo{
+    display:flex;
+    align-items:center;
+    gap:18px;
 }
 
-nav ul li a {
-    color: #ffffff;
-    text-decoration: none;
-    padding: 10px 15px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+.logo img{
+    width:78px;
+    filter:drop-shadow(0 4px 10px rgba(0,0,0,0.45));
 }
 
-nav ul li a:hover {
-    background-color: #004d80;
+nav{
+    flex-grow:1;
 }
 
-/* Media queries per dispositivi mobili */
-@media (max-width: 768px) {
-    .logo img {
-        width: 100px;
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:flex-end;
+    gap:10px;
+    margin:0;
+    padding:0;
+    flex-wrap:wrap;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#dbe5f2;
+    padding:12px 18px;
+    font-size:14px;
+    font-weight:600;
+    border-radius:4px;
+    border:1px solid transparent;
+    transition:all .2s ease;
+}
+
+nav ul li a:hover{
+    background:rgba(255,255,255,0.05);
+    border-color:rgba(255,255,255,0.08);
+}
+
+/* MAIN SECTION */
+
+.names-section,
+.hidden-section,
+#sopralluogoSection,
+#esamiSpecificiSection,
+#victimItemsSection{
+    width:calc(100% - 40px);
+    max-width:1300px;
+    margin:30px auto;
+    padding:34px;
+    background:
+        linear-gradient(180deg,
+        rgba(15,25,40,0.96),
+        rgba(11,20,34,0.98));
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:10px;
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.4);
+    position:relative;
+    overflow:hidden;
+}
+
+.names-section::before,
+.hidden-section::before,
+#sopralluogoSection::before,
+#esamiSpecificiSection::before,
+#victimItemsSection::before{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    padding:10px 18px;
+    background:#8f1d1d;
+    color:white;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1.5px;
+}
+
+/* TITOLI SEZIONI */
+
+.names-section::before{
+    content:"DATABASE SOGGETTI";
+}
+
+.hidden-section::before{
+    content:"OPERAZIONI INVESTIGATIVE";
+}
+
+#sopralluogoSection::before{
+    content:"ARCHIVIO SOPRALLUOGHI";
+}
+
+#esamiSpecificiSection::before{
+    content:"LABORATORIO FORENSE";
+}
+
+#victimItemsSection::before{
+    content:"EFFETTI PERSONALI";
+}
+
+.names-section h2,
+.hidden-section h3,
+#sopralluogoSection h2,
+#esamiSpecificiSection h2,
+#victimItemsSection h2{
+    margin-top:26px;
+    margin-bottom:28px;
+    color:white;
+    font-size:30px;
+    font-weight:700;
+}
+
+/* BUTTON GRID */
+
+.person-options,
+.request-options,
+#locations,
+#examButtons{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:16px;
+}
+
+/* BUTTONS */
+
+.person-btn,
+.request-options button,
+#locations button,
+#examButtons button,
+.victim-items-btn{
+    background:
+        linear-gradient(180deg,#1c3f73 0%,#142e55 100%);
+    border:1px solid rgba(255,255,255,0.08);
+    color:white;
+    padding:18px;
+    border-radius:6px;
+    font-size:14px;
+    font-weight:700;
+    cursor:pointer;
+    transition:all .2s ease;
+    box-shadow:
+        0 10px 24px rgba(0,0,0,0.25);
+}
+
+.person-btn:hover,
+.request-options button:hover,
+#locations button:hover,
+#examButtons button:hover,
+.victim-items-btn:hover{
+    transform:translateY(-2px);
+    background:
+        linear-gradient(180deg,#275395 0%,#1a3c6f 100%);
+    box-shadow:
+        0 18px 36px rgba(0,0,0,0.35);
+}
+
+.person-btn:disabled{
+    opacity:0.5;
+    cursor:not-allowed;
+}
+
+/* RESULT TEXT */
+
+.alert{
+    margin-top:26px;
+    padding:18px;
+    background:rgba(20,50,90,0.3);
+    border:1px solid rgba(80,130,220,0.25);
+    border-radius:6px;
+    color:#d9e6ff;
+    line-height:1.7;
+    font-size:15px;
+}
+
+#selectedPerson{
+    color:#7fb3ff;
+    font-weight:700;
+}
+
+/* AUDIO */
+
+#audioPlayer{
+    width:100%;
+    margin-top:24px;
+    filter:invert(1) contrast(0.9);
+}
+
+/* INPUT */
+
+#esameTossicologicoSection input{
+    width:100%;
+    margin-top:18px;
+    background:#0b1422;
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:6px;
+    padding:16px;
+    color:white;
+    font-size:15px;
+}
+
+#esameTossicologicoSection input:focus{
+    outline:none;
+    border-color:#2d5fa8;
+    box-shadow:
+        0 0 0 4px rgba(45,95,168,0.18);
+}
+
+/* IMAGE */
+
+#imageContainer{
+    margin-top:24px;
+    text-align:center;
+}
+
+#selectedImage{
+    max-width:100%;
+    border-radius:8px;
+    border:1px solid rgba(255,255,255,0.08);
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.35);
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:50px;
+    background:#07111f;
+    border-top:1px solid rgba(255,255,255,0.06);
+    padding:30px 20px;
+    text-align:center;
+    color:#7e90aa;
+    font-size:13px;
+    line-height:1.8;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .header-content{
+        flex-direction:column;
+        padding:22px;
     }
 
-    nav ul {
-        flex-direction: column;
-        justify-content: center;
+    nav ul{
+        justify-content:center;
     }
 
-    .header-content {
-        flex-direction: column;
-        align-items: center;
+    .names-section,
+    .hidden-section,
+    #sopralluogoSection,
+    #esamiSpecificiSection,
+    #victimItemsSection{
+        width:calc(100% - 20px);
+        padding:26px 18px;
     }
 
-    nav ul {
-        padding-top: 10px;
-    }
-}
-
-/* Sezione nomi */
-.names-section {
-    padding: 30px;
-    background-color: #f9f9f9;
-    text-align: center;
-    margin: 20px auto;
-    max-width: 800px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.names-section h2 {
-    font-size: 28px;
-    color: #003366;
-    margin-bottom: 20px;
-}
-
-.person-options {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}
-
-.person-btn {
-    background-color: #004d80;
-    color: #ffffff;
-    padding: 15px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    flex: 1 0 45%;
-    margin: 5px;
-}
-
-.person-btn:hover {
-    background-color: #003366;
-    transform: translateY(-3px);
-}
-
-.person-btn:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
-    box-shadow: none;
-}
-
-/* Sezione nascosta per i dettagli */
-.hidden-section {
-    padding: 30px;
-    background-color: #f4f4f4;
-    margin: 20px auto;
-    max-width: 800px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.hidden-section h3 {
-    font-size: 24px;
-    color: #004d80;
-    margin-bottom: 20px;
-}
-
-.request-options button {
-    padding: 15px 20px;
-    font-size: 16px;
-    background-color: #004d80;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    margin: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.request-options button:hover {
-    background-color: #003366;
-}
-
-/* Lettore audio */
-#audioPlayer {
-    margin-top: 20px;
-    display: block;
-    text-align: center;
-}
-
-/* Messaggio di risultato */
-.alert {
-    color: #006600;
-    font-weight: bold;
-    margin-top: 20px;
-    display: block;
-    text-align: center;
-}
-
-/* Sezione sopralluogo */
-#sopralluogoSection {
-    padding: 30px;
-    background-color: #f9f9f9;
-    text-align: center;
-    margin: 20px auto;
-    max-width: 800px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#locations {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.location-row {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-}
-
-/* Stile dei pulsanti per i sopralluoghi */
-#locations button {
-    background-color: #004d80;
-    color: #ffffff;
-    padding: 15px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: calc(33.33% - 20px);
-    margin: 5px;
-}
-
-#locations button:hover {
-    background-color: #003366;
-    transform: translateY(-3px);
-}
-
-/* Sezione esami specifici */
-#esamiSpecificiSection {
-    padding: 30px;
-    background-color: #f9f9f9;
-    text-align: center;
-    margin: 20px auto;
-    max-width: 800px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#examButtons button {
-    background-color: #004d80;
-    color: #ffffff;
-    padding: 15px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    margin: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-#examButtons button:hover {
-    background-color: #003366;
-}
-
-#esameTossicologicoSection input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-/* Footer */
-footer {
-    background-color: #003366;
-    color: #ffffff;
-    text-align: center;
-    padding: 15px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Stile per il pulsante degli oggetti personali */
-.victim-items-btn {
-    background-color: #004d80;
-    color: #ffffff;
-    padding: 15px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-top: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: inline-block;
-}
-
-.victim-items-btn:hover {
-    background-color: #003366;
-    transform: translateY(-3px);
-}
-
-/* Contenitore per gli oggetti personali */
-#victimItemsSection {
-    padding: 30px;
-    background-color: #f9f9f9;
-    text-align: center;
-    margin: 20px auto;
-    max-width: 800px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Media queries per mobile */
-@media (max-width: 768px) {
-    #victimItemsSection {
-        padding: 20px;
-        margin: 15px auto;
+    .names-section h2,
+    .hidden-section h3,
+    #sopralluogoSection h2,
+    #esamiSpecificiSection h2,
+    #victimItemsSection h2{
+        font-size:24px;
     }
 
-    .victim-items-btn {
-        padding: 12px 18px;
-        font-size: 14px;
+    .person-options,
+    .request-options,
+    #locations,
+    #examButtons{
+        grid-template-columns:1fr;
     }
-}
-
-/* Stile per il contenitore del testo */
-#textContainer {
-    margin: 20px auto;
-    display: block;
-    text-align: center;
-    font-size: 18px;
-    color: #333;
-}
-
-/* Contenitore immagine */
-#imageContainer {
-    text-align: center;
-    margin-top: 20px;
-}
-
-#selectedImage {
-    border: 2px solid #000;
 }

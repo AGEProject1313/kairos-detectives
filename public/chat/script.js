@@ -14,6 +14,7 @@ let unreadMessages = {}; // Per tracciare i messaggi non letti
 let messageSent = { "bartoli": false, "delmonaco": false, "studioDentista": false }; // Per assicurare che il messaggio venga inviato una sola volta
 let responseSent = {}; // Per tracciare se una risposta è stata inviata per ogni mittente
 let audioSent = false; // Per tracciare se l'audio è stato inviato
+let chatStartTime = null;
 
 // Variabile per sbloccare il contesto audio
 let audioContextUnlocked = false;
@@ -59,6 +60,10 @@ function loadStateFromLocalStorage() {
     if (storedResponseSent) responseSent = JSON.parse(storedResponseSent);
     if (storedCurrentSender) currentSender = storedCurrentSender;
     if (storedAudioSent) audioSent = JSON.parse(storedAudioSent);
+    const storedChatStartTime = localStorage.getItem('chatStartTime');
+    if (storedChatStartTime) {
+    chatStartTime = parseInt(storedChatStartTime);
+}
 }
 
 // Funzione per caricare i dati dal file JSON
@@ -299,6 +304,10 @@ function initApp() {
 
     checkAudioStatus(); // Controlla lo stato dell'audio all'inizio
     loadStateFromLocalStorage();
+    if (!chatStartTime) {
+    chatStartTime = Date.now();
+    localStorage.setItem('chatStartTime', chatStartTime);
+}
 
     const chatList = document.querySelector('.chat-list');
 
@@ -370,37 +379,136 @@ function initApp() {
 
     // Imposta i messaggi temporizzati se non sono già stati inviati
     if (!messageSent['bartoli']) {
+
+    const elapsed = Date.now() - chatStartTime;
+    const delay = 30000;
+
+    if (elapsed >= delay) {
+
+        console.log('Invio immediato messaggio bartoli');
+
+        addMessage(
+            'bartoli',
+            chatData['bartoli'].messaggio1,
+            true,
+            false
+        );
+
+        messageSent['bartoli'] = true;
+
+        saveStateToLocalStorage();
+
+    } else {
+
         setTimeout(() => {
+
             if (!messageSent['bartoli']) {
-                console.log('Invio messaggio temporizzato da bartoli');
-                addMessage('bartoli', chatData['bartoli'].messaggio1, true, false);
+
+                console.log('Invio ritardato messaggio bartoli');
+
+                addMessage(
+                    'bartoli',
+                    chatData['bartoli'].messaggio1,
+                    true,
+                    false
+                );
+
                 messageSent['bartoli'] = true;
+
                 saveStateToLocalStorage();
             }
-        }, 30000);
+
+        }, delay - elapsed);
     }
+}
 
     if (!messageSent['delmonaco']) {
+
+    const elapsed = Date.now() - chatStartTime;
+    const delay = 90000;
+
+    if (elapsed >= delay) {
+
+        console.log('Invio immediato messaggio delmonaco');
+
+        addMessage(
+            'delmonaco',
+            chatData['delmonaco'].messaggio1,
+            true,
+            false
+        );
+
+        messageSent['delmonaco'] = true;
+
+        saveStateToLocalStorage();
+
+    } else {
+
         setTimeout(() => {
+
             if (!messageSent['delmonaco']) {
-                console.log('Invio messaggio temporizzato da delmonaco');
-                addMessage('delmonaco', chatData['delmonaco'].messaggio1, true, false);
+
+                console.log('Invio ritardato messaggio delmonaco');
+
+                addMessage(
+                    'delmonaco',
+                    chatData['delmonaco'].messaggio1,
+                    true,
+                    false
+                );
+
                 messageSent['delmonaco'] = true;
+
                 saveStateToLocalStorage();
             }
-        }, 90000);
+
+        }, delay - elapsed);
     }
+}
 
     if (!messageSent['studioDentista']) {
+
+    const elapsed = Date.now() - chatStartTime;
+    const delay = 600000;
+
+    if (elapsed >= delay) {
+
+        console.log('Invio immediato messaggio studioDentista');
+
+        addMessage(
+            'studioDentista',
+            "Buongiorno, sono Sonia dello studio dentistico. Ti ricordo l'appuntamento per domani alle 16:30. Mi raccomando, evita di fumare e bere caffè dall'ora di pranzo e lavati bene i denti!",
+            true,
+            false
+        );
+
+        messageSent['studioDentista'] = true;
+
+        saveStateToLocalStorage();
+
+    } else {
+
         setTimeout(() => {
+
             if (!messageSent['studioDentista']) {
-                console.log('Invio messaggio temporizzato da studioDentista');
-                addMessage('studioDentista', "Buongiorno, sono Sonia dello studio dentistico. Ti ricordo l'appuntamento per domani alle 16:30. Mi raccomando, evita di fumare e bere caffè dall'ora di pranzo e lavati bene i denti!", true, false);
+
+                console.log('Invio ritardato messaggio studioDentista');
+
+                addMessage(
+                    'studioDentista',
+                    "Buongiorno, sono Sonia dello studio dentistico. Ti ricordo l'appuntamento per domani alle 16:30. Mi raccomando, evita di fumare e bere caffè dall'ora di pranzo e lavati bene i denti!",
+                    true,
+                    false
+                );
+
                 messageSent['studioDentista'] = true;
+
                 saveStateToLocalStorage();
             }
-        }, 600000);
+
+        }, delay - elapsed);
     }
+}
 
     // Aggiungi la classe 'active' all'app per nascondere il pulsante
     document.querySelector('.chat-app').classList.add('active');
