@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Esplora i capitoli di Kairos Detectives - Avventure investigative uniche">
+    <meta name="keywords" content="Kairos Detectives, Capitoli, Villa Belcastro, Gioco investigativo, Misteri">
+    <meta name="author" content="A.G.E. Project S.r.l.">
+    <title>Capitoli - Kairos Detectives</title>
+    <link rel="preload" href="fonts/Blanka-Regular.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="index.css" as="style">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="faviconkd.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="capitoli.html">Capitoli</a></li>
+                <li><a href="chisiamo.html">Chi Siamo</a></li>
+                <li><a href="https://www.amazon.it/dp/B0DMMF4W8Z" class="cta-header-button" target="_blank">Acquista</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Aggiungiamo il banner dei cookie -->
+    <div id="cookie-banner" style="display: none;">
+        Questo sito utilizza cookies per migliorare l'esperienza di navigazione. <a href="policies.html#cookies-policy">Leggi di più</a>.
+        <button id="accept-cookies">Accetta</button>
+    </div>
+
+    <!-- Aggiungiamo anche il riferimento allo script dei cookie -->
+    <script src="cookies.js" defer></script>
+
+    <main>
+        <section class="hero">
+            <div class="logo-centered">
+                <img src="logokd.png" alt="Kairos Detectives Logo" width="400" height="auto">
+            </div>
+            <h1 style="margin-top: -30px;">Scopri i nostri Capitoli:</h1>
+        </section>
+
+        <section class="chapters-grid">
+            <div class="chapter-card">
+                <img src="immagine_capitolo.jpg" alt="Villa Belcastro" width="400" height="auto">
+                <h2>Capitolo I: <span class="chapter-title">Verita' sospesa</span></h2>
+                <p style="color: #ffffff;">Benvenuti a Villa Belcastro, un'antica dimora nobiliare che nasconde segreti oscuri tra le sue mura. Un misterioso omicidio ha scosso la quiete della villa, e sta a voi, come detective, svelare la verità celata nel tempo. Esplorate le stanze, analizzate gli indizi e scoprite chi si cela dietro questo intricato caso.</p>
+                <a href="belcastro.html" class="chapter-link">Scopri di più</a>
+            </div>
+            <!-- Altri capitoli futuri -->
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-logos">
+            <a href="https://www.facebook.com/kairosdetectives" target="_blank"><img src="facebook.png" alt="Facebook Logo" width="80" height="auto"></a>
+            <a href="https://www.instagram.com/kairosdetectives/" target="_blank"><img src="instagram.png" alt="Instagram Logo" width="80" height="auto"></a>
+            <a href="https://www.escaperoom-milano.it" target="_blank"><img src="logoage.png" alt="Logo AGE" width="80" height="auto"></a>
+            <a href="https://www.ageinfinitygames.com" target="_blank"><img src="logoinfinity.png" alt="Logo Infinity" width="80" height="auto"></a>
+        </div>
+        <p>
+            A.G.E. Project S.r.l. | Viale Misurata 23, 20146 Milano | P.IVA IT11159940961 |
+            <a href="policies.html" class="policies-link">Policies</a>
+        </p>
+    </footer>
+
+    <script>
+        // Lo stesso script di animazione dell'index
+    </script>
+
+    <!-- Aggiungi questo script prima della chiusura del body -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ottieni il percorso della pagina corrente
+            const currentPath = window.location.pathname;
+            const filename = currentPath.split('/').pop() || 'index.html';
+            
+            // Trova il link corrispondente e aggiungi la classe active
+            const navLinks = document.querySelectorAll('nav ul li a');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === filename) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

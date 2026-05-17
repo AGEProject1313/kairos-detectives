@@ -1,0 +1,159 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('wallpaperlab.png') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+header {
+    background-color: rgba(0, 80, 158, 0.9);
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    height: 50px;
+    margin-right: 15px;
+    /* Logo aggiornato */
+    content: url('geneticavanzatasenzasfondo.png');
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.header-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Stile moderno per i campi di testo */
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    outline: none;
+    background-color: #f7f7f7;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Effetto hover per i campi di testo */
+input[type="text"]:hover,
+input[type="password"]:hover {
+    border-color: #aaa;
+}
+
+/* Effetto focus con transizione */
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #00509e;
+    box-shadow: 0 0 8px rgba(0, 80, 158, 0.2), inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+/* Pulsante */
+button {
+    width: 100%;
+    background-color: #00509e;
+    color: white;
+    border: none;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #003f7e;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 5px;
+    margin-top: 20px;
+    height: 30px;
+    overflow: hidden;
+}
+
+#progress {
+    height: 100%;
+    width: 0;
+    background-color: #00ad00;
+    transition: width 0.5s;
+}
+
+footer {
+    background-color: rgba(0, 80, 158, 0.9);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+    font-size: 14px;
+}
+
+#remaining-time {
+    color: #00ad00; /* Colore verde Matrix */
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: bold; /* Grassetto */
+}
+
+
+/* Bottone che simula un tool esterno */
+.external-tool-button {
+    background-color: darkgreen;
+    color: #fff;
+    font-family: monospace;
+    border: none;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.external-tool-button:hover {
+    background-color: #004d00;
+}

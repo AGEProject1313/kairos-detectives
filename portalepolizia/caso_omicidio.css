@@ -1,0 +1,335 @@
+/* Stile generale */ 
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background-color: #003366;
+    color: #ffffff;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Permette di adattarsi a schermi più piccoli */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+    margin-right: 20px;
+}
+
+nav {
+    flex-grow: 1;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-wrap: wrap; /* Permette al menu di adattarsi a schermi più piccoli */
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #004d80;
+}
+
+/* Media queries per dispositivi mobili */
+@media (max-width: 768px) {
+    .logo img {
+        width: 100px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        padding-top: 10px;
+    }
+}
+
+/* Sezione nomi */
+.names-section {
+    padding: 30px;
+    background-color: #f9f9f9;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.names-section h2 {
+    font-size: 28px;
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+.person-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.person-btn {
+    background-color: #004d80;
+    color: #ffffff;
+    padding: 15px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1 0 45%;
+    margin: 5px;
+}
+
+.person-btn:hover {
+    background-color: #003366;
+    transform: translateY(-3px);
+}
+
+.person-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Sezione nascosta per i dettagli */
+.hidden-section {
+    padding: 30px;
+    background-color: #f4f4f4;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.hidden-section h3 {
+    font-size: 24px;
+    color: #004d80;
+    margin-bottom: 20px;
+}
+
+.request-options button {
+    padding: 15px 20px;
+    font-size: 16px;
+    background-color: #004d80;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.request-options button:hover {
+    background-color: #003366;
+}
+
+/* Lettore audio */
+#audioPlayer {
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+}
+
+/* Messaggio di risultato */
+.alert {
+    color: #006600;
+    font-weight: bold;
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+}
+
+/* Sezione sopralluogo */
+#sopralluogoSection {
+    padding: 30px;
+    background-color: #f9f9f9;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#locations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.location-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+/* Stile dei pulsanti per i sopralluoghi */
+#locations button {
+    background-color: #004d80;
+    color: #ffffff;
+    padding: 15px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 20px);
+    margin: 5px;
+}
+
+#locations button:hover {
+    background-color: #003366;
+    transform: translateY(-3px);
+}
+
+/* Sezione esami specifici */
+#esamiSpecificiSection {
+    padding: 30px;
+    background-color: #f9f9f9;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#examButtons button {
+    background-color: #004d80;
+    color: #ffffff;
+    padding: 15px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#examButtons button:hover {
+    background-color: #003366;
+}
+
+#esameTossicologicoSection input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Footer */
+footer {
+    background-color: #003366;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Stile per il pulsante degli oggetti personali */
+.victim-items-btn {
+    background-color: #004d80;
+    color: #ffffff;
+    padding: 15px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+.victim-items-btn:hover {
+    background-color: #003366;
+    transform: translateY(-3px);
+}
+
+/* Contenitore per gli oggetti personali */
+#victimItemsSection {
+    padding: 30px;
+    background-color: #f9f9f9;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Media queries per mobile */
+@media (max-width: 768px) {
+    #victimItemsSection {
+        padding: 20px;
+        margin: 15px auto;
+    }
+
+    .victim-items-btn {
+        padding: 12px 18px;
+        font-size: 14px;
+    }
+}
+
+/* Stile per il contenitore del testo */
+#textContainer {
+    margin: 20px auto;
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Contenitore immagine */
+#imageContainer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#selectedImage {
+    border: 2px solid #000;
+}

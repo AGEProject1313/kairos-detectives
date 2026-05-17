@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio Genetica Avanzata - Accesso Riservato</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="geneticavanzataconsfondo.png" type="image/x-icon">
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <img class="logo" src="geneticavanzataconsfondo.png" alt="Laboratorio Genetica Avanzata Logo">
+        <span class="header-title">Laboratorio Genetica Avanzata</span>
+    </div>
+</header>
+
+<div class="main-content">
+    <!-- Sezione di login classico -->
+    <div class="container login-container active" id="login-container">
+        <h1>Accesso Riservato</h1>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button id="submit" onclick="checkLogin()" disabled>Invia</button>
+        <p id="error-message" style="color: red; display: none;">Nome utente e password errati.</p>
+
+        <div id="progress-container" style="display: none;">
+            <p id="hack-message">Il tentativo di hacking è iniziato, tempo stimato: 15 minuti.</p>
+            <div class="progress-bar">
+                <div id="progress"></div>
+            </div>
+        </div>
+
+        <p id="remaining-time"></p>
+    </div>
+</div>
+
+<!-- Pulsante brute force -->
+<button id="start-hack" class="external-tool-button" onclick="startHacking()">Inizia processo Brute Force Login</button>
+
+<footer>
+    &copy; 2024 Genetica Avanzata S.r.l. Tutti i diritti riservati.
+</footer>
+
+<script src="index.js"></script>
+
+</body>
+</html>

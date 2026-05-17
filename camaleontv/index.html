@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CamaleonTV - Seleziona Utente</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Aggiungi il logo sopra il titolo -->
+        <img src="logocamaleon.png" alt="CamaleonTV Logo" class="logo">
+        <h1>Chi sta guardando?</h1>
+        <div class="user-selection">
+            <div class="user" id="lavibitches">
+                <img src="avatar1.png" alt="Utente 1" class="avatar">
+                <p>LaviBitches</p>
+                <p class="email">laviniabelcastro@watermail.com</p>
+            </div>
+            <div class="user" id="maddyale">
+                <img src="avatar2.png" alt="Utente 2" class="avatar">
+                <p>MaddyAle</p>
+                <p class="email">alebelcastro@waterweb.com</p>
+            </div>
+            <div class="user" id="maxbelcastro">
+                <img src="avatar3.png" alt="Utente 3" class="avatar">
+                <p>MaxBelcastro</p>
+                <p class="email">m.belcastro@waterweb.com</p>
+            </div>
+            <div class="user" id="ospiti">
+                <img src="avatar4.png" alt="Utente 4" class="avatar">
+                <p>Ospiti</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer con riferimenti fittizi -->
+    <footer>
+        <p>&copy; 2019 CamaleonTV LTD. Tutti i diritti riservati.</p>
+        <p>Sede legale: 67 Dragonfly Street, Roanoke, VA 24011, USA</p>
+        <p>Disclaimer: Questo sito è una simulazione creata esclusivamente per scopi ludici e fa parte del gioco da tavolo Kairos Detectives. I contenuti, le informazioni e i servizi presenti su questa pagina sono fittizi e non rappresentano entità, organizzazioni o individui reali. Qualsiasi somiglianza con eventi, persone o aziende esistenti è puramente casuale.</p>
+    </footer>
+
+    <!-- Script per il reindirizzamento -->
+    <script>
+        // Reindirizza a 'profilolavinia.html' quando si clicca su LaviBitches
+        document.getElementById('lavibitches').addEventListener('click', function() {
+            window.location.href = 'profilolavinia.html';
+        });
+
+        // Reindirizza a 'login-fallito.html' per gli altri utenti
+        document.getElementById('maddyale').addEventListener('click', function() {
+            window.location.href = 'login-fallito.html';
+        });
+
+        document.getElementById('maxbelcastro').addEventListener('click', function() {
+            window.location.href = 'login-fallito.html';
+        });
+
+        document.getElementById('ospiti').addEventListener('click', function() {
+            window.location.href = 'login-fallito.html';
+        });
+    </script>
+</body>
+</html>

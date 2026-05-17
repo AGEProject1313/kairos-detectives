@@ -1,0 +1,29 @@
+{
+    "bartoli": {
+        "messaggio1": "Buongiorno, vi mando la registrazione che ho fatto di nascosto del mio incontro con Alessia Maddalena Belcastro, è lei che ha trovato il cadavere di Silvana Conti. Capirete facilmente che si tratta di un evento soprannaturale e che il mio intervento dovrà essere tempestivo, motivo per cui dovrete sbrigarvi a fare i vostri accertamenti, richiesti dal Venerato Monsignor Elia in persona, in modo da escludere coinvolgimenti umani nell'orrenda uccisione della signora Conti e darmi modo di procedere con l'unico intervento in grado di eliminare finalmente la maledizione che affligge questa povera famiglia.",
+        "scusa1": "Mi dispiace, ma sono in preghiera e non posso rispondere in questo momento.",
+        "scusa2": "Non posso rispondere ora, sono impegnato in un incontro religioso.",
+        "scusa3": "In questo momento, devo rispettare un voto di silenzio. Sarò disponibile più tardi.",
+        "scusa4": "Sono occupato con i miei doveri ecclesiastici. Contattatemi in seguito, per favore.",
+        "scusa5": "La mia devozione mi impedisce di rispondere ora. Vi prego di essere pazienti."
+    },
+    "delmonaco": {
+        "messaggio1": "Buongiorno detectives di Kairos, la vostra fama vi precede. Sono intervenuto personalmente in Villa Belcastro per accertare la morte della signora Conti. La Direzione di Polizia Statale di Firenze ed i miei superiori hanno intenzione di archiviare il caso come 'morte naturale' per insufficienza di elementi che possano indicare altro, però sono vicino alla famiglia Belcastro da molti anni e sento che c'è qualcosa di strano in questa storia. Son venuto a sapere che quel parassita di prete, Bartoli, vi ha contattati per effettuare delle indagini ed ho pensato di contattarvi perchè vorrei che mi aiutaste ad indagare oltre i limiti del mio distintivo. Vi ho fatto recapitare il mio biglietto da visita con le credenziali per accedere al portale della Polizia. Buon lavoro.",
+        "scusa1": "Purtroppo, sono impegnato in una riunione di lavoro e non posso rispondere.",
+        "scusa2": "Al momento sono occupato con questioni urgenti. Risponderò appena possibile.",
+        "scusa3": "Mi scuso, ma sono sul campo e non posso parlare ora.",
+        "scusa4": "Sto conducendo un'indagine e non sono disponibile per una chiamata.",
+        "scusa5": "Sono momentaneamente indisposto. Vi contatterò appena possibile."
+    },
+    "QG Kairos": {
+        "messaggio1": "Buongiorno detective, vi ho spedito con massima urgenza il dossier per il caso. Il nostro referente è Padre Bartoli, un potente prelato dell'Ordine di Sant'Elia. Potete considerarla una sorta di setta e la famiglia Belcastro ne è devota da generazioni. Purtroppo per lui, Padre Bartoli deve sottostare ad alcune rigide regole imposte dal leader spirituale della setta e in questo caso è tenuto a ricevere l'assistenza di un'agenzia come la nostra. Per questo motivo indagheremo su questo caso, ma fate attenzione, Bartoli non sarà collaborativo e ci vorrà fuori dai piedi quanto prima per poter vendere liberamente qualche gingillo magico alla famiglia.",
+        "scusa1": "Al momento, siamo impegnati con un'altra operazione e non possiamo rispondere.",
+        "scusa2": "Ci scusiamo, ma siamo in una riunione strategica e non possiamo prendere chiamate.",
+        "scusa3": "Siamo in fase di preparazione per una missione e non possiamo rispondere ora.",
+        "scusa4": "Il team è attualmente sul campo, per cui non possiamo rispondere alle richieste.",
+        "scusa5": "Siamo momentaneamente occupati con un'altra indagine. Vi risponderemo al più presto."
+    },
+    "studioDentista": {
+        "messaggio1": "Buongiorno. sono Sonia dello studio dentistico, ti ricordo l'appuntamento per domani alle 16:30. Mi raccomando, evita di fumare e bere caffè dall'ora di pranzo e lavati bene i denti!"
+    }
+}

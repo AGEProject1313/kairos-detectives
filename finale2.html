@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verità Sospese - Risolvi il caso</title>
+    <link rel="stylesheet" href="finale.css">
+    <link rel="shortcut icon" href="faviconkd.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title-cluedo">Qualcosa ancora non torna!</h1>
+        <p>Bravi detective, avete risolto il caso, ma per far si che possa essere solido in tribunale, dobbiamo chiarire ancora qualche dettaglio.</p>
+
+        <form id="quiz-form-final">
+            <div class="question">
+                <h2>1. Come ha sollevato Arturo, il corpo di Silvana?</h2>
+                <div class="options-grid">
+                    <label class="option"><input type="radio" name="answer1-final" value="lift1"> Utilizzando un complesso sistema di immagini olografiche</label>
+                    <label class="option"><input type="radio" name="answer1-final" value="lift2"> Utilizzando del sottile nylon da pesca professionale</label>
+                    <label class="option"><input type="radio" name="answer1-final" value="lift3"> Utilizzando dei potenti magneti</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <h2>2. Come ha raffreddato la stanza?</h2>
+                <div class="options-grid">
+                    <label class="option"><input type="radio" name="answer2-final" value="ice1"> Ha manomesso il sistema di condizionamento dell'aria</label>
+                    <label class="option"><input type="radio" name="answer2-final" value="ice2"> Ha utilizzato del ghiaccio secco ed un ventilatore speciale</label>
+                    <label class="option"><input type="radio" name="answer2-final" value="ice3"> Ha drogato Alessia con dell'interferone per farle provare sensazione di freddo</label>
+                </div>
+            </div>
+
+            <button type="button" id="submit-btn-final" class="cluedo-btn">Risolvi il caso</button>
+        </form>
+
+        <div id="success-message-final" class="hidden">
+            <h2>Avete risolto il caso!</h2>
+            <p>Complimenti! Ce l'avete fatta. Quei due marciranno in prigione per molto tempo!</p>
+            <audio controls>
+            <source src="finale.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        </div>
+
+        <div id="error-message-final" class="hidden">
+            <h2>Ancora non ci siamo, controllate meglio le informazioni!</h2>
+        </div>
+    </div>
+
+    <script src="finale2.js"></script>
+</body>
+</html>

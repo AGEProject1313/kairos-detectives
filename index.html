@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Scopri Kairos Detectives, un gioco di investigazione coinvolgente. Unisciti a noi per risolvere i misteri del Capitolo I: Villa Belcastro.">
+    <meta name="keywords" content="Kairos Detectives, Gioco di investigazione, Enigmi, Capitolo I, Verità sospesa, Villa Belcastro, Escape Room, Mistero">
+    <meta name="author" content="A.G.E. Project S.r.l.">
+    <title>Kairos Detectives - Home</title>
+    <link rel="preload" href="fonts/Blanka-Regular.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="index.css" as="style">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="faviconkd.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="capitoli.html">Capitoli</a></li>
+                <li><a href="chisiamo.html">Chi Siamo</a></li>
+                <li><a href="https://www.amazon.it/dp/B0DMMF4W8Z" class="cta-header-button" target="_blank">Acquista</a></li>
+            </ul>
+        </nav>
+    </header>    
+
+    <div id="cookie-banner" style="display: none;">
+        Questo sito utilizza cookies per migliorare l'esperienza di navigazione. <a href="policies.html#cookies-policy">Leggi di più</a>.
+        <button id="accept-cookies">Accetta</button>
+    </div>
+
+    <main>
+        <section class="hero">
+            <div class="logo-centered">
+                <img src="logokd.png" alt="Kairos Detectives Logo" width="400" height="auto">
+            </div>
+            <h1>Benvenuto in Kairos Detectives</h1>
+            <p>Scopri il <strong>PRIMO ATTO</strong>: <br> <a href="belcastro.html">Verita' sospesa</a></p>
+
+            <div class="centered-image">
+                <img src="immagine_capitolo.jpg" alt="Immagine del Capitolo Verità sospesa" width="600" height="auto">
+            </div>
+        </section>
+
+        <section class="game-details">
+            <div class="game-detail-item">
+                <img src="icona1.png" alt="Icona giocatori" width="160" height="auto">
+                <p>CONSIGLIATO FINO A 8 GIOCATORI</p>
+            </div>
+            <div class="game-detail-item">
+                <img src="icona2.png" alt="Icona età" width="160" height="auto">
+                <p>ETÀ +14 ANNI</p>
+            </div>
+            <div class="game-detail-item">
+                <img src="icona3.png" alt="Icona tempo" width="160" height="auto">
+                <p>DA UN'ORA E MEZZA A TRE ORE DI GIOCO</p>
+            </div>
+            <div class="game-detail-item">
+                <img src="icona4.png" alt="Icona internet" width="160" height="auto">
+                <p>NECESSARIO ACCESSO A INTERNET</p>
+            </div>
+        </section>        
+
+        <section class="image-cards">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-image">
+                        <img src="immagine1.jpeg" alt="Immagine 1" width="300" height="auto" loading="lazy">
+                    </div>
+                </div>
+                <div class="card-caption">
+                    Il divertimento incontra il realismo!
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-image">
+                        <img src="immagine2.jpeg" alt="Immagine 2" width="300" height="auto" loading="lazy">
+                    </div>
+                </div>
+                <div class="card-caption">
+                    Mettete alla prova il vostro intuito
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-image">
+                        <img src="immagine3.jpeg" alt="Immagine 3" width="300" height="auto" loading="lazy">
+                    </div>
+                </div>
+                <div class="card-caption">
+                    Gioca con chi vuoi e risolvi il mistero
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-logos">
+            <a href="https://www.facebook.com/kairosdetectives" target="_blank"><img src="facebook.png" alt="Facebook Logo" width="80" height="auto"></a>
+            <a href="https://www.instagram.com/kairosdetectives/" target="_blank"><img src="instagram.png" alt="Instagram Logo" width="80" height="auto"></a>
+            <a href="https://www.escaperoom-milano.it" target="_blank"><img src="logoage.png" alt="Logo AGE" width="80" height="auto"></a>
+            <a href="https://www.ageinfinitygames.com" target="_blank"><img src="logoinfinity.png" alt="Logo Infinity" width="80" height="auto"></a>
+        </div>
+        <p>
+            A.G.E. Project S.r.l. | Viale Misurata 23, 20146 Milano | P.IVA IT11159940961 |
+            <a href="policies.html" class="policies-link">Policies</a>
+        </p>
+    </footer>
+
+    <script src="cookies.js" defer></script>
+    <script>
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+            
+            // Considera l'elemento visibile quando è entrato per almeno il 30% nella viewport
+            return (rect.top <= windowHeight * 0.7) && (rect.bottom >= windowHeight * 0.3);
+        }
+
+        function resetAnimation(element) {
+            element.style.animation = 'none';
+            element.offsetHeight; // Trigger reflow
+            element.style.animation = null;
+        }
+
+        function handleScroll() {
+            // Gestisce le card
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                if (isElementInViewport(card)) {
+                    if (!card.classList.contains('visible')) {
+                        resetAnimation(card);
+                        card.classList.add('visible');
+                    }
+                } else {
+                    card.classList.remove('visible');
+                }
+            });
+
+            // Gestisce gli elementi della hero section
+            const heroElements = document.querySelectorAll('.logo-centered, .hero h1, .hero p, .centered-image');
+            heroElements.forEach(element => {
+                if (isElementInViewport(element)) {
+                    if (!element.classList.contains('animate')) {
+                        resetAnimation(element);
+                        element.classList.add('animate');
+                    }
+                } else {
+                    element.classList.remove('animate');
+                }
+            });
+
+            // Gestisce gli elementi game-detail-item
+            const gameDetails = document.querySelectorAll('.game-detail-item');
+            gameDetails.forEach(detail => {
+                if (isElementInViewport(detail)) {
+                    if (!detail.classList.contains('animate')) {
+                        resetAnimation(detail);
+                        detail.classList.add('animate');
+                    }
+                } else {
+                    detail.classList.remove('animate');
+                }
+            });
+        }
+
+        // Aggiungi l'event listener per lo scroll
+        window.addEventListener('scroll', handleScroll);
+        // Controlla anche al caricamento della pagina
+        window.addEventListener('load', handleScroll);
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ottieni il percorso della pagina corrente
+            const currentPath = window.location.pathname;
+            const filename = currentPath.split('/').pop() || 'index.html';
+            
+            // Trova il link corrispondente e aggiungi la classe active
+            const navLinks = document.querySelectorAll('nav ul li a');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === filename) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+body {
+    background-color: #F7D358;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    height: 100%;
+    min-height: 100vh; /* Per garantire che il body copra l'intera altezza dello schermo */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Partenza dall'alto per evitare che i contenuti siano fuori vista */
+    overflow-y: auto; /* Abilita lo scrolling verticale */
+}
+
+.container {
+    text-align: center;
+    background-color: #FFFFFF;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 800px;
+    border: 5px solid #333;
+    margin-top: 20px; /* Spazio dall'alto per non sovrapporre il contenuto */
+}
+
+.title-cluedo {
+    font-size: 2.5em;
+    color: #2E2E2E;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    animation: bounceIn 2s ease;
+}
+
+.question h2 {
+    color: #DF0101;
+    margin-top: 30px;
+    text-transform: uppercase;
+    font-size: 1.8em;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.option {
+    background-color: #2E2E2E;
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    text-align: left; /* Allinea solo il testo a sinistra */
+    width: 100%; /* Assicura che l'opzione usi tutta la larghezza disponibile */
+    justify-content: flex-start; /* Mantiene il contenuto allineato a sinistra */
+}
+
+.option input[type="radio"] {
+    margin-right: 10px;
+    position: relative; /* Mantieni il radio button nella sua posizione */
+}
+
+.option:hover {
+    background-color: #DF0101;
+    color: #FFFFFF;
+}
+
+.cluedo-btn {
+    background-color: #01DF74;
+    color: #FFFFFF;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+}
+
+.cluedo-btn:hover {
+    background-color: #04B45F;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0); }
+    60% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Ottimizzazione per dispositivi mobili */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+        padding-bottom: 100px; /* Spazio extra per evitare sovrapposizioni */
+        margin: 0 auto; /* Centra il contenitore */
+        border: 5px solid #333; /* Mantieni il bordo grigio scuro */
+        box-sizing: border-box; /* Assicura che padding e bordo siano inclusi nelle dimensioni */
+    }
+
+    .title-cluedo {
+        font-size: 2em;
+    }
+
+    .question h2 {
+        font-size: 1.5em;
+    }
+
+    .options-grid {
+        grid-template-columns: 1fr; /* Una colonna per le opzioni su schermi piccoli */
+    }
+
+    .cluedo-btn {
+        font-size: 1.2em;
+        padding: 10px 20px;
+        margin-bottom: 20px; /* Spazio extra sotto il pulsante */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 15px;
+        padding-bottom: 120px; /* Spazio extra in basso */
+        margin: 0 10px; /* Aggiungi margine per evitare collisioni con i bordi */
+        border: 5px solid #333; /* Mantieni il bordo grigio scuro */
+        box-sizing: border-box; /* Assicura che il padding non causi overflow */
+    }
+
+    .title-cluedo {
+        font-size: 1.8em;
+    }
+
+    .question h2 {
+        font-size: 1.3em;
+    }
+
+    .options-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cluedo-btn {
+        font-size: 1em;
+        padding: 8px 15px;
+        margin-bottom: 20px; /* Spazio extra sotto il pulsante */
+    }
+}
+    .options-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cluedo-btn {
+        font-size: 1em;
+        padding: 8px 15px;
+        margin-bottom: 20px; /* Spazio extra sotto il pulsante per renderlo visibile */
+}
+
+/* Assicura che i messaggi nascosti non occupino spazio quando nascosti */
+.hidden {
+    display: none !important; /* Forza il nascondimento su mobile */
+}
+
+#success-message-final, #error-message-final {
+    display: none; /* Nascondi di default */
+}
+
+/* Quando non sono nascosti, rendili visibili */
+#success-message-final:not(.hidden),
+#error-message-final:not(.hidden) {
+    display: block; /* Assicurati che il messaggio visibile sia correttamente mostrato */
+    margin-top: 20px;
+    color: green; /* Imposta il colore per il messaggio di successo */
+}
+
+#error-message-final:not(.hidden) {
+    color: red; /* Imposta il colore per il messaggio di errore */
+}

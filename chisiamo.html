@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Scopri chi siamo - Kairos Detectives, un'avventura investigativa unica">
+    <meta name="keywords" content="Kairos Detectives, Chi Siamo, A.G.E. Project, Escape Room, Gioco investigativo">
+    <meta name="author" content="A.G.E. Project S.r.l.">
+    <title>Chi Siamo - Kairos Detectives</title>
+    <link rel="preload" href="fonts/Blanka-Regular.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="index.css" as="style">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="faviconkd.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="capitoli.html">Capitoli</a></li>
+                <li><a href="chisiamo.html">Chi Siamo</a></li>
+                <li><a href="https://www.amazon.it/dp/B0DMMF4W8Z" class="cta-header-button" target="_blank">Acquista</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="cookie-banner" style="display: none;">
+        Questo sito utilizza cookies per migliorare l'esperienza di navigazione. <a href="policies.html#cookies-policy">Leggi di più</a>.
+        <button id="accept-cookies">Accetta</button>
+    </div>
+
+    <main>
+        <section class="hero">
+            <div class="logo-centered">
+                <img src="logokd.png" alt="Kairos Detectives Logo" width="400" height="auto">
+            </div>
+            <h1 style="margin-top: -30px;">IL NOSTRO TEAM</h1>
+        </section>
+
+        <section class="team-section">
+            <div class="team-member">
+                <img src="team1.JPG" alt="Sara Areni" width="300" height="auto">
+                <h3>Sara Areni</h3>
+                <p>Sara Areni è la creatrice del format "Scappati di Casa", lanciato nel 2023, in cui condivide affascinanti racconti di viaggi ed esperienze uniche. Appassionata di giochi da tavolo, Sara ha deciso di trasformare questa passione in realtà fondando e sviluppando "Kairos Detective". Con un occhio attento ai dettagli e una grande creatività, Sara si dedica a creare grafiche a doc.</p>
+            </div>
+
+            <div class="team-member">
+                <img src="team2.JPG" alt="Marco Mugavero" width="300" height="auto">
+                <h3>Marco Mugavero</h3>
+                <p>Marco Mugavero è il co-fondatore, insieme a Sara Areni, del format "Scappati di Casa", nato nel 2023 per raccontare i loro viaggi ed esperienze. Da sempre appassionato di giochi di carte, Marco ha saputo adattare le sue strategie ludiche a "Kairos Detective", diventando anche lui fondatore e sviluppatore di questo gioco. Marco grazie al suo talento per le relazioni si occupa di trovare clienti e collaboratori espandendo la rete di contatti e promuovendo il gioco.</p>
+            </div>
+
+            <div class="team-member">
+                <img src="team3.jpeg" 
+                     alt="Alessandro Santalucia" 
+                     width="300" 
+                     height="300"
+                     onerror="this.src='./images/placeholder.jpg'"
+                     loading="lazy">
+                <h3>Alessandro Santalucia</h3>
+                <p>Alessandro Santalucia è un imprenditore italiano, fondatore e amministratore di A.G.E. Project S.r.l. e dei brand Kairos Detectives e Infinity Games. Con una profonda passione per i videogiochi ed i giochi da tavolo, Alessandro si concentra sulla creazione di flussi di gioco e narrazioni, realizzando esperienze coinvolgenti e innovative. È il creatore del gioco Kairos Detectives, che combina una trama avvincente con sfide interattive ed appassionanti.</p>
+            </div>
+
+            <div class="team-member">
+                <img src="team4.jpeg" 
+                     alt="Davide Tripi" 
+                     width="300" 
+                     height="300"
+                     onerror="this.src='./images/placeholder.jpg'"
+                     loading="lazy">
+                <h3>Davide Tripi</h3>
+                <p>Davide Tripi è un imprenditore italiano, co-fondatore e amministratore di A.G.E. Infinity Games e dei brand Kairos Detectives e Infinity Games. La sua carriera è iniziata nel 2008 nel settore bancario, ma spinto da una passione innata per l'imprenditorialità, ha scelto di investire in esperienze coinvolgenti e innovative che permettono alle persone di interagire tra loro divertendosi.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-logos">
+            <a href="https://www.facebook.com/kairosdetectives" target="_blank"><img src="facebook.png" alt="Facebook Logo" width="80" height="auto"></a>
+            <a href="https://www.instagram.com/kairosdetectives/" target="_blank"><img src="instagram.png" alt="Instagram Logo" width="80" height="auto"></a>
+            <a href="https://www.escaperoom-milano.it" target="_blank"><img src="logoage.png" alt="Logo AGE" width="80" height="auto"></a>
+            <a href="https://www.ageinfinitygames.com" target="_blank"><img src="logoinfinity.png" alt="Logo Infinity" width="80" height="auto"></a>
+        </div>
+        <p>
+            A.G.E. Project S.r.l. | Viale Misurata 23, 20146 Milano | P.IVA IT11159940961 |
+            <a href="policies.html" class="policies-link">Policies</a>
+        </p>
+    </footer>
+
+    <script src="cookies.js" defer></script>
+    <script>
+        // Lo stesso script di animazione dell'index
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ottieni il percorso della pagina corrente
+            const currentPath = window.location.pathname;
+            const filename = currentPath.split('/').pop() || 'index.html';
+            
+            // Trova il link corrispondente e aggiungi la classe active
+            const navLinks = document.querySelectorAll('nav ul li a');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === filename) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

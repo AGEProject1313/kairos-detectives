@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Riservata - Studio Legale Salvini&Spinati</title>
+    <link rel="stylesheet" href="area_riservata.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <div>
+                <img src="salvinispinatilogo.png" alt="Salvini & Spinati Logo" class="logo-img">
+                <span>Salvini&Spinati <br> Studio Legale Associato</span>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="area_riservata.html" class="active">Area Riservata</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="login-section" class="container">
+            <div class="content">
+                <h2>Area Riservata -M.Belcastro-</M.Belcastro></h2>
+                <p>Accedi con le tue credenziali per consultare i tuoi documenti riservati.</p>
+                <div class="login-form">
+                    <input type="email" id="email" placeholder="Inserisci la tua email" required>
+                    <div class="input-container">
+                        <input type="password" id="password" placeholder="Inserisci la tua password" required>
+                        <div class="hint-button" onclick="showHint()">?</div>
+                    </div>
+                    <p id="hint" class="hint">Suggerimento: La mia opera d'arte preferita, 8 lettere</p>
+                    <button onclick="validateLogin()">Accedi</button>
+                    <p id="error-message" style="color: red; display: none;">Email o password non corretti.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="document-section" class="container hidden">
+            <div class="content">
+                <h2>I miei documenti</h2>
+                <div class="profile">
+                    <img src="avatarbelcastro.png" alt="Massimo Belcastro">
+                    <span>Massimo Belcastro</span>
+                </div>
+                <button onclick="showDocumentList()">Visualizza Documenti</button>
+                <div id="document-list" class="document-list hidden">
+                    <h3>Documenti Disponibili:</h3>
+                    <ul>
+                        <li onclick="openDocument()">Testamento - Redatto in data 26 gennaio 2024</li>
+                    </ul>
+                </div>
+                <div id="document-preview" class="document-preview hidden">
+                    <img src="testamento.pdf" alt="Testamento Massimo Belcastro">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2024 Studio Legale Salvini&Spinati. Tutti i diritti riservati.
+        <p>Disclaimer: Questo sito è una simulazione creata esclusivamente per scopi ludici e fa parte del gioco da tavolo Kairos Detectives. I contenuti, le informazioni e i servizi presenti su questa pagina sono fittizi e non rappresentano entità, organizzazioni o individui reali. Qualsiasi somiglianza con eventi, persone o aziende esistenti è puramente casuale.</p>
+    </footer>
+
+    <script src="area_riservata.js"></script>
+
+    <script>
+        function validateLogin() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (email === "m.belcastro@waterweb.com" && password === "KOMOREBI") {
+                document.getElementById('login-section').classList.add('hidden');
+                document.getElementById('document-section').classList.remove('hidden');
+            } else {
+                document.getElementById('error-message').style.display = 'block';
+            }
+        }
+
+        function showHint() {
+            const hint = document.getElementById('hint');
+            hint.style.display = hint.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function showDocumentList() {
+            document.getElementById('document-list').classList.remove('hidden');
+        }
+
+        function openDocument() {
+            document.getElementById('document-preview').classList.remove('hidden');
+        }
+    </script>
+</body>
+
+</html>

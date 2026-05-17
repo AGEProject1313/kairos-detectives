@@ -1,0 +1,178 @@
+/* Stile di base */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.container {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 500px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2, h3 {
+    margin-bottom: 20px;
+}
+
+.selection-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+select {
+    width: 75%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.add-button, .remove-button {
+    padding: 8px 10px;
+    font-size: 12px;
+}
+
+.remove-button {
+    margin-left: 10px;
+    position: relative;
+    right: -10px;
+}
+
+.mix-container {
+    margin: 20px 0;
+}
+
+#mixContainer {
+    list-style-type: none;
+    padding: 0;
+}
+
+#mixContainer li {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f0f0f0;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#result {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+.toxicity-bar {
+    display: flex;
+    gap: 5px;
+}
+
+.toxicity-block {
+    padding: 5px;
+    color: white;
+    border-radius: 3px;
+}
+
+.toxicity-description {
+    margin-left: 10px;
+}
+
+.mix-animation {
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(90deg, #ddd 0%, #4CAF50 100%);
+    animation: mixing 15s linear;
+}
+
+@keyframes mixing {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+
+/* Ottimizzazioni per schermi piccoli */
+@media only screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+        max-width: 90%;
+    }
+
+    select {
+        width: 70%;
+        font-size: 14px;
+    }
+
+    .add-button, .remove-button {
+        font-size: 10px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+
+    .toxicity-block {
+        padding: 3px;
+        font-size: 12px;
+    }
+
+    .toxicity-description {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .container {
+        padding: 5px;
+        max-width: 100%;
+    }
+
+    select {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    .add-button, .remove-button {
+        font-size: 8px;
+    }
+
+    button {
+        font-size: 12px;
+    }
+
+    .toxicity-block {
+        padding: 2px;
+        font-size: 10px;
+    }
+
+    .toxicity-description {
+        font-size: 10px;
+    }
+}

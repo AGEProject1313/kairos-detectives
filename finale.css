@@ -1,0 +1,232 @@
+body {
+    background-color: #F7D358;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    height: 100%;
+    min-height: 100vh; /* Per garantire che il body copra l'intera altezza dello schermo */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Partenza dall'alto per evitare che i contenuti siano fuori vista */
+    overflow-y: auto; /* Abilita lo scrolling verticale */
+}
+
+.container {
+    text-align: center;
+    background-color: #FFFFFF;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 800px;
+    border: 5px solid #333;
+    margin-top: 20px; /* Spazio dall'alto per non sovrapporre il contenuto */
+}
+
+.title-cluedo {
+    font-size: 2.5em;
+    color: #2E2E2E;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    animation: bounceIn 2s ease;
+}
+
+.question h2 {
+    color: #DF0101;
+    margin-top: 30px;
+    text-transform: uppercase;
+    font-size: 1.8em;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.option {
+    background-color: #2E2E2E;
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    text-align: left; /* Giustifica solo il testo all'interno */
+    padding-left: 10px; /* Aggiungi padding per spostare il testo verso sinistra */
+}
+
+.option input[type="radio"] {
+    margin-right: 10px;
+}
+
+.option:hover {
+    background-color: #DF0101;
+    color: #FFFFFF;
+}
+
+.cluedo-btn {
+    background-color: #01DF74;
+    color: #FFFFFF;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+}
+
+.cluedo-btn:hover {
+    background-color: #04B45F;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0); }
+    60% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Ottimizzazione per dispositivi mobili */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+        padding-bottom: 100px; /* Spazio extra in fondo per evitare sovrapposizioni con il menu del browser */
+    }
+
+    .title-cluedo {
+        font-size: 2em;
+    }
+
+    .question h2 {
+        font-size: 1.5em;
+    }
+
+    .options-grid {
+        grid-template-columns: 1fr; /* Una colonna per le opzioni su schermi piccoli */
+    }
+
+    .cluedo-btn {
+        font-size: 1.2em;
+        padding: 10px 20px;
+        margin-bottom: 20px; /* Spazio extra sotto il pulsante */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 15px;
+        padding-bottom: 120px; /* Spazio ancora maggiore per evitare sovrapposizioni */
+    }
+
+    .title-cluedo {
+        font-size: 1.8em;
+    }
+
+    .question h2 {
+        font-size: 1.3em;
+    }
+
+    .options-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cluedo-btn {
+        font-size: 1em;
+        padding: 8px 15px;
+        margin-bottom: 20px; /* Spazio extra sotto il pulsante per renderlo visibile */
+    }
+}
+
+/* Stile per il disclaimer */
+#disclaimer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Offuscamento scuro */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box; /* Assicura che il padding non causi overflow */
+}
+
+#disclaimer-overlay h2 {
+    font-size: 2.5em;
+    margin-bottom:20px;
+    padding: 0 15px; /* Padding per garantire che il testo non collida ai bordi */
+}
+
+#disclaimer-overlay p {
+    font-size: 1.6em;
+    margin-bottom: 30px;
+    padding: 0 15px; /* Padding laterale per evitare collisioni */
+}
+
+#disclaimer-overlay button {
+    background-color: #01DF74;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.5em;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    max-width: 90%; /* Impedisce al pulsante di essere troppo largo */
+    box-sizing: border-box; /* Assicura che il padding del bottone non causi overflow */
+}
+
+#disclaimer-overlay button:hover {
+    background-color: #04B45F;
+}
+
+/* Ottimizzazione per tablet */
+@media (max-width: 768px) {
+    #disclaimer-overlay h2 {
+        font-size: 2em;
+    }
+
+    #disclaimer-overlay p {
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+
+    #disclaimer-overlay button {
+        font-size: 1.2em;
+        padding: 10px 20px;
+    }
+}
+
+/* Ottimizzazione per smartphone */
+@media (max-width: 480px) {
+    #disclaimer-overlay h2 {
+        font-size: 1.8em;
+        padding: 0 10px; /* Maggiore padding per evitare collisioni */
+    }
+
+    #disclaimer-overlay p {
+        font-size: 1.2em;
+        margin-bottom: 15px;
+        padding: 0 10px; /* Maggiore padding laterale su schermi piccoli */
+    }
+
+    #disclaimer-overlay button {
+        font-size: 1em;
+        padding: 8px 15px;
+        max-width: 90%; /* Assicura che il bottone non sia troppo largo su schermi piccoli */
+    }
+}
