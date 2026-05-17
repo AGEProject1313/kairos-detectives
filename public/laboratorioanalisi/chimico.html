@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chimico Online - Miscelazione</title>
+    <link rel="stylesheet" href="chimico.css">
+</head>
+<body>
+    <header>
+        <h1>Chimico Online</h1>
+    </header>
+
+    <div class="container">
+        <h2>Seleziona almeno due sostanze chimiche</h2>
+
+        <div class="chemistry-section">
+            <h3>Gassosa</h3>
+            <div class="selection-group">
+                <select id="gasSelect">
+                    <option value="">--Seleziona sostanza gassosa--</option>
+                    <option value="Azoto">Azoto</option>
+                    <option value="Ossigeno">Ossigeno</option>
+                    <option value="Idrogeno">Idrogeno</option>
+                    <option value="Elio">Elio</option>
+                    <option value="Argon">Argon</option>
+                    <option value="Neon">Neon</option>
+                    <option value="Radon">Radon</option>
+                    <option value="Krypton">Krypton</option>
+                    <option value="Xenon">Xenon</option>
+                    <option value="Ossido di azoto">Ossido di azoto</option>
+                    <option value="Diossido di carbonio">Diossido di carbonio</option>
+                    <option value="Monossido di carbonio">Monossido di carbonio</option>
+                    <option value="Metano">Metano</option>
+                    <option value="Propano">Propano</option>
+                    <option value="Butano">Butano</option>
+                    <option value="Cloro">Cloro</option>
+                    <option value="Fluoro">Fluoro</option>
+                    <option value="Ammoniaca">Ammoniaca</option>
+                    <option value="Acetilene">Acetilene</option>
+                    <option value="Etano">Etano</option>
+                    <option value="Etilene">Etilene</option>
+                    <option value="Freon">Freon</option>
+                    <option value="Anidride solforosa">Anidride solforosa</option>
+                    <option value="Azoto protossido">Azoto protossido</option>
+                    <option value="Acido fluoridrico">Acido fluoridrico</option>
+                    <option value="Esafluoruro di zolfo">Esafluoruro di zolfo</option>
+                    <option value="Dicloro">Dicloro</option>
+                    <option value="Trifluorometano">Trifluorometano</option>
+                    <option value="Cianuro di idrogeno">Cianuro di idrogeno</option>
+                    <option value="Cloroformio">Cloroformio</option>
+                </select>
+                <button class="add-button" onclick="addToContainer('gas')">+</button>
+            </div>
+        </div>
+
+        <div class="chemistry-section">
+            <h3>Liquida</h3>
+            <div class="selection-group">
+                <select id="liquidSelect">
+                    <option value="">--Seleziona sostanza liquida--</option>
+                    <option value="Acqua">Acqua</option>
+                    <option value="Xilene">Xilene</option>
+                    <option value="Perganganato di Potassio">Perganganato di Potassio</option>
+                    <option value="Olio">Olio</option>
+                    <option value="Etanolo">Etanolo</option>
+                    <option value="Acido cloridrico">Acido cloridrico</option>
+                    <option value="Acido acetico">Acido acetico</option>
+                    <option value="Acetone">Acetone</option>
+                    <option value="Benzina">Benzina</option>
+                    <option value="Butanolo">Butanolo</option>
+                    <option value="Cloroformio liquido">Cloroformio liquido</option>
+                    <option value="Etere">Etere</option>
+                    <option value="Formaldeide">Formaldeide</option>
+                    <option value="Glicole etilenico">Glicole etilenico</option>
+                    <option value="Isopropanolo">Isopropanolo</option>
+                    <option value="Metanolo">Metanolo</option>
+                    <option value="Nicotina">Nicotina</option>
+                    <option value="Ossido di etilene">Ossido di etilene</option>
+                    <option value="Toluene">Toluene</option>
+                    <option value="Glicerina">Glicerina</option>
+                    <option value="Tricloroetilene">Tricloroetilene</option>
+                    <option value="Ammoniaca liquida">Ammoniaca liquida</option>
+                    <option value="Alcool denaturato">Alcool denaturato</option>
+                    <option value="Mercurio">Mercurio</option>
+                    <option value="Solfato di rame">Solfato di rame</option>
+                    <option value="Iodio">Iodio</option>
+                    <option value="Acqua ossigenata">Acqua ossigenata</option>
+                    <option value="Bromo">Bromo</option>
+                    <option value="Solfuro di carbonio">Solfuro di carbonio</option>
+                    <option value="Fosforo bianco">Fosforo bianco</option>
+                </select>
+                <button class="add-button" onclick="addToContainer('liquid')">+</button>
+            </div>
+        </div>
+
+        <div class="mix-container">
+            <h3>Contenitore di Miscelazione</h3>
+            <ul id="mixContainer">
+                <!-- Sostanze selezionate appariranno qui -->
+            </ul>
+        </div>
+
+        <button id="mixButton" onclick="startMixing()">Esegui Miscelazione</button>
+
+        <div id="result" class="hidden">
+            <h3>Risultato della Miscelazione</h3>
+            <table>
+                <tr>
+                    <td>Stato:</td>
+                    <td id="stateResult"></td>
+                </tr>
+                <tr>
+                    <td>Infiammabile:</td>
+                    <td id="flammableResult"></td>
+                </tr>
+                <tr>
+                    <td>Tossicità per l'essere umano:</td>
+                    <td><div class="toxicity-bar"></div></td>
+                </tr>
+                <tr>
+                    <td>Corrosivo:</td>
+                    <td id="corrosiveResult"></td>
+                </tr>
+                <tr>
+                    <td>Esplosivo:</td>
+                    <td id="explosiveResult"></td>
+                </tr>
+                <tr>
+                    <td>Dannoso per l'ambiente:</td>
+                    <td id="harmfulResult"></td>
+                </tr>
+                <tr>
+                    <td>Formula chimica:</td>
+                    <td id="formulaResult"></td>
+                </tr>
+            </table>
+        </div>        
+
+    <script src="chimico.js"></script>
+</body>
+</html>

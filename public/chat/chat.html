@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnionChat</title>
+    <link rel="stylesheet" href="chat.css">
+    <link rel="icon" href="logoonion.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="logoonion.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="chat-app">
+        <div class="chat-list-container">
+            <div class="chat-list">
+                <!-- La lista delle chat verrà popolata dinamicamente -->
+            </div>
+        </div>
+        <div class="chat-main">
+            <div class="messages">
+                <!-- I messaggi della chat verranno popolati dinamicamente -->
+            </div>
+            <div class="message-input-container">
+                <input type="text" id="message-input" placeholder="Scrivi un messaggio...">
+                <button id="send-button">Invia</button>
+            </div>
+        </div>
+    </div>
+    <audio id="notification-sound" src="notification.mp3" preload="auto"></audio>
+    <!-- Pulsante per avviare la chat e sbloccare l'audio -->
+    <button id="start-chat-button">Avvia Chat</button>
+    <script src="script.js"></script>
+</body>
+</html>

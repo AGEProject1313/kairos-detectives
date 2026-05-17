@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Massimo Belcastro - Documenti</title>
+    <link rel="stylesheet" href="belcastro.css">
+    <link rel="shortcut icon" href="geneticavanzataconsfondo.png" type="image/x-icon">
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <img class="avatar" src="avatarbelcastro.png" alt="Avatar di Massimo Belcastro">
+        <h1 class="header-title">Benvenuto, Massimo Belcastro</h1>
+    </div>
+</header>
+
+<div class="main-content">
+    <div class="container">
+        <h2>Documenti personali</h2>
+        <div class="documents-section">
+            <button id="documents-btn" onclick="openDocuments()">Visualizza Documenti</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Chimico online</h2>
+        <div class="documents-section">
+            <button id="chemistry-btn" onclick="openChemistry()">Entra</button>
+        </div>
+    </div>
+</div>
+
+<script>
+function openDocuments() {
+    window.open('testdna.pdf', '_blank');
+}
+
+function openChemistry() {
+    window.location.href = 'chimico.html';
+}
+</script>
+
+</body>
+</html>

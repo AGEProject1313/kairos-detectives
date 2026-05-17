@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+*{
+    box-sizing:border-box;
+}
+
+html,
+body{
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:
+        linear-gradient(rgba(7,7,9,0.94),rgba(7,7,9,0.96)),
+        url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=2070&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    color:#ececef;
+    min-height:100vh;
+}
+
+/* HEADER */
+
+header{
+    width:100%;
+    background:
+        linear-gradient(180deg,#0d0d10 0%,#141418 100%);
+    border-bottom:1px solid rgba(255,255,255,0.06);
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.45);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:24px 40px;
+    flex-wrap:wrap;
+    gap:20px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(10px);
+}
+
+header::before{
+    content:"STUDIO LEGALE ASSOCIATO — PROFILI PROFESSIONALI";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    padding:10px 24px;
+    background:#7d1018;
+    color:white;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+/* LOGO */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    margin-top:14px;
+}
+
+.logo-img{
+    width:74px;
+    height:74px;
+    border-radius:50%;
+    border:2px solid rgba(255,255,255,0.08);
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.45);
+}
+
+.logo span{
+    font-family:'Cormorant Garamond',serif;
+    font-size:34px;
+    line-height:1.1;
+    color:white;
+    font-weight:600;
+}
+
+/* NAV */
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:12px;
+    margin:14px 0 0 0;
+    padding:0;
+    flex-wrap:wrap;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#dddddd;
+    font-size:14px;
+    font-weight:600;
+    padding:12px 18px;
+    border-radius:4px;
+    border:1px solid transparent;
+    transition:all .2s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active{
+    background:rgba(255,255,255,0.05);
+    border-color:rgba(255,255,255,0.08);
+    color:white;
+}
+
+/* MAIN */
+
+.container{
+    width:calc(100% - 40px);
+    max-width:1400px;
+    margin:50px auto;
+    padding:50px;
+    background:
+        linear-gradient(180deg,
+        rgba(18,18,22,0.96),
+        rgba(10,10,12,0.98));
+    border:1px solid rgba(255,255,255,0.06);
+    border-radius:12px;
+    box-shadow:
+        0 24px 60px rgba(0,0,0,0.45);
+    position:relative;
+    overflow:hidden;
+}
+
+.container::before{
+    content:"PARTNER PROFESSIONALI";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    padding:12px 20px;
+    background:#7d1018;
+    color:white;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+/* TITLE */
+
+.container h2{
+    margin-top:28px;
+    margin-bottom:40px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:54px;
+    line-height:1.1;
+    color:white;
+    font-weight:600;
+    text-align:center;
+}
+
+/* BIOGRAPHY GRID */
+
+.biography{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(380px,1fr));
+    gap:34px;
+}
+
+/* CARD */
+
+.bio-section{
+    background:
+        linear-gradient(180deg,
+        rgba(22,22,28,0.96),
+        rgba(12,12,16,0.98));
+    border:1px solid rgba(255,255,255,0.06);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.35);
+    transition:all .25s ease;
+}
+
+.bio-section:hover{
+    transform:translateY(-4px);
+    box-shadow:
+        0 28px 60px rgba(0,0,0,0.45);
+}
+
+/* IMAGE */
+
+.bio-section img{
+    width:100%;
+    height:auto;
+    display:block;
+    border-bottom:1px solid rgba(255,255,255,0.06);
+    background:#111;
+}
+
+/* CONTENT */
+
+.bio-section h3{
+    margin:30px 30px 18px 30px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:42px;
+    color:white;
+    font-weight:600;
+}
+
+.bio-section p{
+    margin:0 30px 24px 30px;
+    color:#b8b8c0;
+    line-height:1.9;
+    font-size:15px;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:60px;
+    background:#0c0c10;
+    border-top:1px solid rgba(255,255,255,0.05);
+    padding:34px 24px;
+    text-align:center;
+    color:#8d8d95;
+    font-size:13px;
+    line-height:1.9;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        padding:22px;
+    }
+
+    .logo{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .logo span{
+        font-size:28px;
+    }
+
+    nav ul{
+        justify-content:center;
+    }
+
+    .container{
+        width:calc(100% - 20px);
+        padding:34px 22px;
+    }
+
+    .container h2{
+        font-size:38px;
+    }
+
+    .biography{
+        grid-template-columns:1fr;
+    }
+
+    .bio-section img{
+        height:320px;
+    }
+
+    .bio-section h3{
+        font-size:34px;
+    }
+}

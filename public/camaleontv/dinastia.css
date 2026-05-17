@@ -1,0 +1,189 @@
+/* Stile base */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000;
+}
+
+.logo img {
+    width: 150px;
+}
+
+.avatar img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #E50914;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+h2 {
+    color: #E50914;
+    margin-bottom: 10px;
+    font-size: 1.8em;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.cover {
+    display: block;
+    margin: 0 auto 30px auto;
+    width: 50%;
+    border-radius: 10px;
+}
+
+.episodes ul {
+    list-style: none;
+    padding: 0;
+}
+
+.episodes ul li {
+    background-color: #222;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.episodes ul li:hover {
+    background-color: #333;
+}
+
+.cast p, .crew p {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.pdf-download {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.pdf-download .dev-button {
+    background-color: #E50914;
+    color: #fff;
+    padding: 15px 25px;
+    font-size: 1.1em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.pdf-download .dev-button:hover {
+    background-color: #b00710;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #000;
+    color: #777;
+    font-size: 0.9em;
+    position: relative;
+    z-index: 10;
+}
+
+/* Ottimizzazione per mobile (schermi inferiori a 768px) */
+@media (max-width: 768px) {
+    .logo img {
+        width: 120px;
+    }
+
+    .avatar img {
+        width: 60px;
+        height: 60px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .cover {
+        width: 80%;
+    }
+
+    .pdf-download .dev-button {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+
+    footer {
+        font-size: 0.8em;
+    }
+}
+
+/* Ottimizzazione per desktop (schermi superiori a 1024px) */
+@media (min-width: 1024px) {
+    .logo img {
+        width: 180px;
+    }
+
+    .avatar img {
+        width: 100px;
+        height: 100px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1.3em;
+    }
+
+    .cover {
+        width: 40%;
+    }
+
+    .pdf-download .dev-button {
+        padding: 18px 30px;
+        font-size: 1.2em;
+    }
+
+    footer {
+        font-size: 1em;
+    }
+}

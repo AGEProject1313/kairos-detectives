@@ -1,0 +1,222 @@
+/* Stili di base validi per tutti i dispositivi */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.container {
+    padding: 20px;
+}
+
+.logo {
+    width: 200px; /* Dimensione logo di base più grande */
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #E50914; /* Colore rosso principale */
+    font-size: 2.5em; /* Titolo di base */
+    margin-bottom: 30px;
+}
+
+.user {
+    width: 150px; /* Aggiunge larghezza fissa per prevenire sovrapposizioni */
+    text-align: center; /* Allinea il testo al centro */
+}
+
+.user-selection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Aumenta lo spazio tra gli utenti per evitare sovrapposizioni */
+}
+
+.user p {
+    margin: 5px 0;
+    white-space: nowrap; /* Evita la rottura del testo su più righe */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Aggiunge '...' se l'email è troppo lunga */
+}
+
+.email {
+    font-size: 1em; /* Font delle email leggermente più piccolo */
+    color: gray;
+    margin-top: 5px; /* Aggiunge spazio tra il nome e l'email */
+}
+.avatar {
+    width: 120px; /* Avatar più grandi di default */
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.user:hover .avatar {
+    transform: scale(1.1); /* Ingrandisce leggermente l'avatar al passaggio del mouse */
+}
+
+p {
+    color: #fff;
+    font-size: 1.2em; /* Dimensione testo utente di base */
+}
+
+/* Stile per il footer */
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: #000;
+    color: #777;
+    font-size: 0.9em;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Media query per tablet (schermi medi, tra 768px e 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .logo {
+        width: 250px; /* Logo più grande per tablet */
+    }
+
+    h1 {
+        font-size: 3em; /* Titolo più grande su tablet */
+    }
+
+    .user-selection {
+        gap: 25px; /* Maggior spaziatura tra gli utenti */
+    }
+
+    .user {
+        width: 160px; /* Utenti più larghi su tablet */
+    }
+
+    .avatar {
+        width: 150px;
+        height: 150px;
+    }
+
+    p {
+        font-size: 1.4em; /* Testo utente più grande per tablet */
+    }
+
+    footer {
+        font-size: 1em; /* Footer leggermente più grande su tablet */
+    }
+}
+
+/* Media query per desktop (schermi grandi, oltre 1024px) */
+@media (min-width: 1025px) {
+    .logo {
+        width: 350px; /* Logo molto più grande per desktop */
+    }
+
+    h1 {
+        font-size: 4em; /* Titolo ancora più grande su desktop */
+    }
+
+    .user-selection {
+        gap: 40px; /* Maggior spaziatura tra gli utenti */
+    }
+
+    .user {
+        width: 220px; /* Utenti più larghi su desktop */
+    }
+
+    .avatar {
+        width: 200px; /* Avatar molto più grandi su desktop */
+        height: 200px;
+    }
+
+    p {
+        font-size: 1.8em; /* Testo utente più grande per desktop */
+    }
+
+    footer {
+        font-size: 0.6em; /* Footer più grande per desktop */
+    }
+}
+
+/* Modifiche per mobile: Avatar in orizzontale a coppie di due */
+@media (max-width: 600px) {
+    .logo {
+        width: 250px; /* Logo più grande per mobile */
+    }
+
+    h1 {
+        font-size: 2.5em; /* Titolo ridimensionato per mobile */
+    }
+
+    .user-selection {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Disposizione a coppie di due */
+        gap: 20px; /* Maggior spaziatura tra gli avatar */
+        justify-content: center;
+    }
+
+    .user {
+        width: 140px; /* Larghezza avatar su mobile */
+    }
+
+    .avatar {
+        width: 140px; /* Avatar più grandi su mobile */
+        height: 140px;
+    }
+
+    p {
+        font-size: 1.3em; /* Testo più grande per mobile */
+    }
+
+    footer {
+        font-size: 0.3em; /* Riduzione delle dimensioni del testo nel footer su mobile */
+    }
+}
+@media (max-width: 600px) {
+    .logo {
+        width: 250px; /* Logo più grande per mobile */
+    }
+
+    h1 {
+        font-size: 2.5em; /* Titolo ridimensionato per mobile */
+    }
+
+    .user-selection {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Disposizione a coppie di due */
+        gap: 20px; /* Maggior spaziatura tra gli avatar */
+        justify-content: center;
+    }
+
+    .user {
+        width: 140px; /* Larghezza avatar su mobile */
+    }
+
+    .avatar {
+        width: 140px; /* Avatar più grandi su mobile */
+        height: 140px;
+    }
+
+    p {
+        font-size: 1.3em; /* Testo più grande per mobile */
+    }
+
+    .email {
+        font-size: 0.4em; /* Diminuisce la dimensione del carattere delle email su mobile */
+        white-space: normal; /* Consente alle email di andare su più righe */
+        word-wrap: break-word; /* Spezza l'email se necessario */
+    }
+
+    footer {
+        font-size: 0.4em; /* Riduzione delle dimensioni del testo nel footer su mobile */
+    }
+}
+

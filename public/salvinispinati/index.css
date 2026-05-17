@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+*{
+    box-sizing:border-box;
+}
+
+html,
+body{
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:
+        linear-gradient(rgba(8,8,10,0.92),rgba(8,8,10,0.95)),
+        url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2070&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    color:#e8e8e8;
+    min-height:100vh;
+}
+
+/* HEADER */
+
+header{
+    width:100%;
+    background:
+        linear-gradient(180deg,#0d0d10 0%,#141418 100%);
+    border-bottom:1px solid rgba(255,255,255,0.06);
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.45);
+    position:sticky;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(10px);
+}
+
+header::before{
+    content:"STUDIO LEGALE ASSOCIATO — FIRENZE";
+    display:block;
+    width:100%;
+    padding:10px 24px;
+    background:#7d1018;
+    color:white;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:24px 40px;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+/* LOGO */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.logo-img{
+    width:74px;
+    height:74px;
+    object-fit:cover;
+    border-radius:50%;
+    border:2px solid rgba(255,255,255,0.08);
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.45);
+}
+
+.logo span{
+    font-family:'Cormorant Garamond',serif;
+    font-size:34px;
+    line-height:1.1;
+    color:white;
+    font-weight:600;
+    letter-spacing:.5px;
+}
+
+/* NAV */
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:12px;
+    margin:0;
+    padding:0;
+    flex-wrap:wrap;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#dddddd;
+    font-size:14px;
+    font-weight:600;
+    padding:12px 18px;
+    border-radius:4px;
+    border:1px solid transparent;
+    transition:all .2s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active{
+    background:rgba(255,255,255,0.05);
+    border-color:rgba(255,255,255,0.08);
+    color:white;
+}
+
+/* MAIN */
+
+main{
+    width:100%;
+}
+
+/* SECTIONS */
+
+.container{
+    width:calc(100% - 40px);
+    max-width:1400px;
+    margin:50px auto;
+    padding:50px;
+    background:
+        linear-gradient(180deg,
+        rgba(18,18,22,0.96),
+        rgba(10,10,12,0.98));
+    border:1px solid rgba(255,255,255,0.06);
+    border-radius:12px;
+    box-shadow:
+        0 24px 60px rgba(0,0,0,0.45);
+    position:relative;
+    overflow:hidden;
+}
+
+.container::before{
+    content:"CONSULENZA LEGALE RISERVATA";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    padding:12px 20px;
+    background:#7d1018;
+    color:white;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+/* CONTENT */
+
+.content{
+    margin-top:28px;
+}
+
+.content h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:54px;
+    line-height:1.1;
+    margin-bottom:24px;
+    color:white;
+    font-weight:600;
+}
+
+.content p{
+    font-size:17px;
+    line-height:1.9;
+    color:#b7b7bc;
+    max-width:900px;
+}
+
+/* LIST */
+
+ul{
+    margin-top:24px;
+    padding-left:20px;
+}
+
+ul li{
+    margin-bottom:16px;
+    color:#d7d7dc;
+    line-height:1.7;
+    font-size:16px;
+}
+
+/* IMAGES */
+
+.disordered-image{
+    width:100%;
+    margin-top:40px;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.06);
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.4);
+}
+
+.disordered-images{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:24px;
+    margin-top:40px;
+}
+
+.disordered-images img{
+    width:100%;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.06);
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.4);
+    transition:all .25s ease;
+}
+
+.disordered-images img:hover{
+    transform:translateY(-4px);
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:60px;
+    background:#0c0c10;
+    border-top:1px solid rgba(255,255,255,0.05);
+    padding:34px 24px;
+    text-align:center;
+    color:#8d8d95;
+    font-size:13px;
+    line-height:1.9;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        padding:22px;
+    }
+
+    .logo{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .logo span{
+        font-size:28px;
+    }
+
+    nav ul{
+        justify-content:center;
+    }
+
+    .container{
+        width:calc(100% - 20px);
+        padding:34px 22px;
+    }
+
+    .content h2{
+        font-size:38px;
+    }
+
+    .content p{
+        font-size:16px;
+    }
+
+    .disordered-images{
+        grid-template-columns:1fr;
+    }
+}

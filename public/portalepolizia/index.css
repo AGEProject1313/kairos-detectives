@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    box-sizing:border-box;
+}
+
+html,
+body{
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:
+        linear-gradient(rgba(6,12,22,0.88),rgba(6,12,22,0.92)),
+        url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2070&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    color:#dfe7f2;
+    min-height:100vh;
+}
+
+/* SECURITY BAR */
+
+.top-security-bar{
+    width:100%;
+    background:#050b14;
+    border-bottom:1px solid rgba(255,255,255,0.05);
+    padding:10px 24px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    font-size:12px;
+    letter-spacing:1px;
+    color:#8ca3c7;
+}
+
+.security-left{
+    font-weight:600;
+}
+
+.security-right{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#7fdc9a;
+    font-weight:700;
+}
+
+.security-status{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:#35d07f;
+    box-shadow:0 0 12px rgba(53,208,127,0.8);
+}
+
+/* HEADER */
+
+header{
+    background:
+        linear-gradient(180deg,#07111f 0%,#0d1d34 100%);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    box-shadow:0 12px 30px rgba(0,0,0,0.45);
+}
+
+.header-content{
+    width:100%;
+    max-width:1400px;
+    margin:0 auto;
+    padding:18px 32px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.logo img{
+    width:78px;
+    height:auto;
+    filter:drop-shadow(0 4px 12px rgba(0,0,0,0.45));
+}
+
+.logo::after{
+    content:"DIREZIONE DI POLIZIA STATALE DI FIRENZE";
+    font-size:13px;
+    letter-spacing:2px;
+    color:#8ca3c7;
+    font-weight:700;
+}
+
+nav{
+    flex-grow:1;
+}
+
+nav ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    justify-content:flex-end;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#dbe5f2;
+    padding:12px 18px;
+    font-size:14px;
+    font-weight:600;
+    border-radius:4px;
+    border:1px solid transparent;
+    transition:all .2s ease;
+}
+
+nav ul li a:hover{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
+    color:white;
+}
+
+/* HERO */
+
+.hero{
+    position:relative;
+    margin:40px auto 20px auto;
+    width:calc(100% - 40px);
+    max-width:1400px;
+    padding:70px 50px;
+    border-radius:12px;
+    overflow:hidden;
+    background:
+        linear-gradient(135deg,
+        rgba(10,20,35,0.96),
+        rgba(17,34,58,0.92));
+    border:1px solid rgba(255,255,255,0.08);
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.45);
+}
+
+.hero::before{
+    content:"ACCESSO PUBBLICO — SISTEMA INFORMATIVO INVESTIGATIVO";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    padding:12px 20px;
+    background:#8f1d1d;
+    color:white;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:1.5px;
+}
+
+.hero h1{
+    margin-top:30px;
+    margin-bottom:16px;
+    font-size:48px;
+    line-height:1.1;
+    color:#ffffff;
+    max-width:900px;
+}
+
+.hero p{
+    max-width:800px;
+    font-size:18px;
+    line-height:1.8;
+    color:#9db0cb;
+}
+
+/* MAIN */
+
+main{
+    width:100%;
+    max-width:1400px;
+    margin:0 auto;
+    padding:20px;
+}
+
+/* NEWS GRID */
+
+.news{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:28px;
+}
+
+/* ARTICLE CARD */
+
+article{
+    background:
+        linear-gradient(180deg,
+        rgba(15,25,40,0.96),
+        rgba(11,20,34,0.98));
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:10px;
+    overflow:hidden;
+    transition:all .25s ease;
+    box-shadow:
+        0 18px 40px rgba(0,0,0,0.35);
+}
+
+article:hover{
+    transform:translateY(-4px);
+    border-color:rgba(80,130,220,0.4);
+    box-shadow:
+        0 28px 60px rgba(0,0,0,0.45);
+}
+
+article img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+    display:block;
+    border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+article h2{
+    margin:24px 24px 14px 24px;
+    font-size:22px;
+    line-height:1.4;
+    color:#ffffff;
+}
+
+article p.preview,
+article p.full-article{
+    margin:0 24px 24px 24px;
+    color:#9fb0c8;
+    line-height:1.7;
+    font-size:15px;
+}
+
+article p.full-article{
+    display:none;
+}
+
+/* BUTTON */
+
+button.read-more{
+    margin:0 24px 28px 24px;
+    background:
+        linear-gradient(180deg,#2459a6 0%,#183f78 100%);
+    border:none;
+    color:white;
+    padding:14px 18px;
+    border-radius:6px;
+    font-weight:700;
+    font-size:14px;
+    cursor:pointer;
+    transition:all .2s ease;
+}
+
+button.read-more:hover{
+    transform:translateY(-2px);
+    box-shadow:
+        0 10px 24px rgba(24,63,120,0.45);
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:60px;
+    background:#07111f;
+    border-top:1px solid rgba(255,255,255,0.06);
+    padding:30px 20px;
+    text-align:center;
+    color:#7e90aa;
+    font-size:13px;
+    line-height:1.8;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .top-security-bar{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .header-content{
+        flex-direction:column;
+        padding:22px;
+    }
+
+    .logo{
+        flex-direction:column;
+    }
+
+    .logo::after{
+        text-align:center;
+    }
+
+    nav ul{
+        justify-content:center;
+    }
+
+    .hero{
+        padding:50px 24px;
+        width:calc(100% - 20px);
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    article img{
+        height:220px;
+    }
+}

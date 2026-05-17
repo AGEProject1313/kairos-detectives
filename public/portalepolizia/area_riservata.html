@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Riservata - Direzione di Polizia Statale di Firenze</title>
+    <link rel="stylesheet" href="area_riservata.css">
+    <link rel="icon" href="logopolizia.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="logopolizia.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="top-security-bar">
+    <div class="security-left">
+        SISTEMA CENTRALE INVESTIGATIVO — RETE RISERVATA
+    </div>
+
+    <div class="security-right">
+        <span class="security-status"></span>
+        CONNESSIONE SICURA
+    </div>
+</div>
+        <div class="header-content">
+            <div class="logo">
+                <img src="logopolizia.png" alt="Logo Polizia Statale" />
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="area_riservata.html">Area Riservata</a></li>
+                    <li><a href="contatti.html">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>    
+
+    <main>
+        <section class="login-section">
+            <h1>Accesso Area Riservata</h1>
+            <p>Per accedere all'area riservata, inserisci il tuo nome utente e password.</p>
+            <div class="form-group">
+                <input type="text" id="username" placeholder="Nome Utente" class="input-field">
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" placeholder="Password" class="input-field">
+            </div>
+            <div class="form-group">
+                <button id="loginButton" class="login-button standard">Accedi</button>
+            </div>
+            <div id="error-message" class="alert hidden">Nome utente o password non validi. Controlla le credenziali e riprova.</div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Direzione di Polizia Statale di Firenze | Via Torricelli 141, Firenze</p>
+        <p>Disclaimer: Questo sito è una simulazione creata esclusivamente per scopi ludici e fa parte del gioco da tavolo Kairos Detectives. I contenuti, le informazioni e i servizi presenti su questa pagina sono fittizi e non rappresentano entità, organizzazioni o individui reali. Qualsiasi somiglianza con eventi, persone o aziende esistenti è puramente casuale.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const loginButton = document.getElementById("loginButton");
+            const username = document.getElementById("username");
+            const password = document.getElementById("password");
+            const errorMessage = document.getElementById("error-message");
+
+            loginButton.addEventListener("click", function() {
+                // Simulazione di autenticazione
+                const validUsername = "DelMonaco";
+                const validPassword = "zenigata77";
+
+                if (username.value === validUsername && password.value === validPassword) {
+                    sessionStorage.setItem("authorized", "true");
+                    window.location.href = "area_riservata_ispettore.html";
+                } else {
+                    errorMessage.classList.remove("hidden");
+                    errorMessage.classList.add("visible");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
