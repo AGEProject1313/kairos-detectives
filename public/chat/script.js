@@ -1,5 +1,20 @@
 // script.js
 
+// KAIROS CHAT — EMERGENCY RESET VERSION
+const KAIROS_CHAT_VERSION = "2026-05-18-reset-01";
+
+[
+  "messagesLog",
+  "unreadMessages",
+  "messageSent",
+  "responseSent",
+  "currentSender",
+  "audioSent",
+  "chatStartTime"
+].forEach((key) => localStorage.removeItem(key));
+
+sessionStorage.clear();
+
 const senders = [
     { id: 'QG Kairos', name: 'QG Kairos', avatar: 'logokd.jpeg' },
     { id: 'bartoli', name: 'Padre Bartoli', avatar: 'logoordine2.png' },
@@ -303,7 +318,6 @@ function initApp() {
     }
 
     checkAudioStatus(); // Controlla lo stato dell'audio all'inizio
-    loadStateFromLocalStorage();
     if (!chatStartTime) {
     chatStartTime = Date.now();
     localStorage.setItem('chatStartTime', chatStartTime);

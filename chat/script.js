@@ -1,4 +1,18 @@
 // script.js
+// KAIROS CHAT — EMERGENCY RESET VERSION
+const KAIROS_CHAT_VERSION = "2026-05-18-reset-01";
+
+[
+  "messagesLog",
+  "unreadMessages",
+  "messageSent",
+  "responseSent",
+  "currentSender",
+  "audioSent",
+  "chatStartTime"
+].forEach((key) => localStorage.removeItem(key));
+
+sessionStorage.clear();
 
 const senders = [
     { id: 'QG Kairos', name: 'QG Kairos', avatar: 'logokd.jpeg' },
@@ -304,7 +318,6 @@ function initApp() {
     }
 
     checkAudioStatus(); // Controlla lo stato dell'audio all'inizio
-    loadStateFromLocalStorage();
     if (!chatStartTime) {
     chatStartTime = Date.now();
     saveStateToLocalStorage();
@@ -316,20 +329,6 @@ function initApp() {
     if (!document.querySelector(`.chat-item[data-sender-id="QG Kairos"]`)) {
         const kairosChatItem = createChatItem(senders.find(s => s.id === 'QG Kairos'), unreadMessages['QG Kairos'] || false);
         chatList.appendChild(kairosChatItem);
-    }
-
-    // Inizializza gli elementi di chat esistenti dal messagesLog
-    if (messagesLog) {
-        Object.keys(messagesLog).forEach(senderId => {
-            if (senderId !== 'QG Kairos') { // Evita di aggiungere di nuovo "QG Kairos"
-                if (!document.querySelector(`.chat-item[data-sender-id="${senderId}"]`)) {
-                    const sender = senders.find(s => s.id === senderId);
-                    const unread = unreadMessages[senderId] || false;
-                    const chatItem = createChatItem(sender, unread);
-                    chatList.appendChild(chatItem);
-                }
-            }
-        });
     }
 
     // Seleziona la chat corrente o imposta 'QG Kairos' come default
@@ -439,6 +438,22 @@ setInterval(() => {
 
 // Funzione per avviare l'app dopo l'interazione dell'utente
 function startApp() {
+
+    localStorage.clear();
+sessionStorage.clear();
+
+messagesLog = {};
+unreadMessages = {};
+responseSent = {};
+audioSent = false;
+
+messageSent = {
+    bartoli: false,
+    delmonaco: false,
+    studioDentista: false
+};
+
+chatStartTime = Date.now();
     const audio = document.getElementById('notification-sound');
     if (audio) {
         checkAudioStatus();
