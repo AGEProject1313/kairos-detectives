@@ -1,0 +1,11 @@
+I QR stampati di Verità Sospesa dipendono dai redirect Firebase.
+
+Non eliminare:
+- portalepolizia
+- salvinispinati
+- laboratorioanalisi
+- chat
+- camaleontv
+- risolvi
+
+Prima di modificare Vercel o Firebase verificare i QR dei giochi già venduti.
