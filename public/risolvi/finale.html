@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verità Sospese - Risolvi il caso</title>
+    <link rel="stylesheet" href="finale.css">
+    <link rel="shortcut icon" href="faviconkd.ico" type="image/x-icon">
+</head>
+<body>
+    <div id="disclaimer-overlay">
+        <h2>SPOILER ALERT!!!</h2>
+        <p>Stai entrando nella fase finale del gioco, dove potrai inserire i risultati che hai trovato per individuare il colpevole.</p>
+        <p>Ti consigliamo di entrare in questa sezione solo quando ritieni di avere abbastanza elementi per identificare con certezza il colpevole. Può contenere SPOILER!!!</p>
+        <button onclick="hideDisclaimer()">Continua</button>
+    </div>    
+    <div class="container">
+        <h1 class="title-cluedo">Chi ha commesso il crimine?</h1>
+        <p>Siamo arrivati al dunque, ora è il momento di trarre le conclusioni!</p>
+
+        <form id="quiz-form">
+            <div class="question">
+                <h2>1. Chi ha ucciso Silvana Conti?</h2>
+                <div class="options-grid">
+                    <label class="option"><input type="radio" name="answer1" value="colpevole1"> Massimo Belcastro</label>
+                    <label class="option"><input type="radio" name="answer1" value="colpevole2"> Arturo Spinati</label>
+                    <label class="option"><input type="radio" name="answer1" value="colpevole3"> Serge Renoir</label>
+                    <label class="option"><input type="radio" name="answer1" value="colpevole1"> Lo spirito di villa Belcastro</label>
+                    <label class="option"><input type="radio" name="answer1" value="colpevole1"> Lavinia Belcastro</label>
+                    <label class="option"><input type="radio" name="answer1" value="colpevole2"> Alina Daarie</label>
+                    <label class="option"><input type="radio" name="answer1" value="colpevole1"> Padre Bartoli</label>
+                    <label class="option"><input type="radio" name="answer1" value="colpevole3"> Paolo Bonetti</label>
+                    <label class="option"><input type="radio" name="answer1" value="colpevole3"> Alessia Belcastro</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <h2>2. Qualcun altro è coinvolto nell'omicidio?</h2>
+                <div class="options-grid">
+                    <label class="option"><input type="radio" name="answer2" value="complice1"> No</label>
+                    <label class="option"><input type="radio" name="answer2" value="complice2"> Padre Bartoli</label>
+                    <label class="option"><input type="radio" name="answer2" value="complice3"> Paolo Bonetti</label>
+                    <label class="option"><input type="radio" name="answer2" value="complice2"> Arturo Spinati</label>
+                    <label class="option"><input type="radio" name="answer2" value="complice3"> Lavinia Belcastro</label>
+                    <label class="option"><input type="radio" name="answer2" value="complice2"> Alina Daarie</label>
+                    <label class="option"><input type="radio" name="answer2" value="complice3"> Massimo Belcastro</label>
+                    <label class="option"><input type="radio" name="answer2" value="complice2"> Alessia Belcastro</label>
+                    <label class="option"><input type="radio" name="answer2" value="complice3"> Serge Renoir</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <h2>3. Qual è la causa della morte?</h2>
+                <div class="options-grid">
+                    <label class="option"><input type="radio" name="answer3" value="scena1"> Strangolamento con sottili fili di nylon</label>
+                    <label class="option"><input type="radio" name="answer3" value="scena2"> Avvelenamento da inalazione di gas o vapori</label>
+                    <label class="option"><input type="radio" name="answer3" value="scena3"> Morte totalmente naturale</label>
+                    <label class="option"><input type="radio" name="answer3" value="scena1"> Morte soprannaturale</label>
+                    <label class="option"><input type="radio" name="answer3" value="scena2"> Ansfissia da rimozione dell'ossigeno nella stanza</label>
+                    <label class="option"><input type="radio" name="answer3" value="scena3"> Morte naturale</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <h2>4. Qual è il movente dell'omicidio di Silvana Conti?</h2>
+                <div class="options-grid">
+                    <label class="option"><input type="radio" name="answer5" value="movente1"> Impedire il compimento della giustizia o la testimonianza</label>
+                    <label class="option"><input type="radio" name="answer5" value="movente2"> Vendetta e gelosia</label>
+                    <label class="option"><input type="radio" name="answer5" value="movente3"> Interrompere un ricatto</label>
+                    <label class="option"><input type="radio" name="answer5" value="movente1"> Protezione del segreto personale legato alla sfera passionale</label>
+                    <label class="option"><input type="radio" name="answer5" value="movente2"> Persecuzione ossessiva e stalking</label>
+                    <label class="option"><input type="radio" name="answer5" value="movente3"> Vantaggio lavorativo e carriera spietata</label>
+                </div>
+            </div>
+
+            <button type="button" id="submit-btn" class="cluedo-btn">Risolvi il caso </button>
+        </form>
+
+        <div id="success-message" class="hidden">
+            <h2>Hai risolto il mistero!</h2>
+            <p>Lavinia Belcastro ha avvelenato Silvana Conti, con Arturo Spinati come complice. La verità è venuta a galla!</p>
+            <audio controls>
+                <source src="finale.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio controls>
+                <source src="finale2.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <div id="error-message" class="hidden">
+            <h2>Controlla meglio le informazioni, state sbagliando qualcosa!</h2>
+        </div>
+    </div>
+
+    <script src="finale.js"></script>
+</body>
+</html>
