@@ -1,0 +1,52 @@
+{
+  "hosting": {
+    "public": "public",
+    "redirects": [
+      {
+        "source": "/portalepolizia/index.html",
+        "destination": "https://www.kairosdetectives.com/portalepolizia/index.html",
+        "type": 302
+      },
+      {
+        "source": "/portalepolizia",
+        "destination": "https://www.kairosdetectives.com/portalepolizia/",
+        "type": 302
+      },
+      {
+        "source": "/salvinispinati/index.html",
+        "destination": "https://www.kairosdetectives.com/salvinispinati/index.html",
+        "type": 302
+      },
+      {
+        "source": "/salvinispinati",
+        "destination": "https://www.kairosdetectives.com/salvinispinati/",
+        "type": 302
+      },
+      {
+        "source": "/laboratorioanalisi/index.html",
+        "destination": "https://www.kairosdetectives.com/laboratorioanalisi/index.html",
+        "type": 302
+      },
+      {
+        "source": "/chat/chat.html",
+        "destination": "https://www.kairosdetectives.com/chat/chat.html",
+        "type": 302
+      },
+      {
+        "source": "/chat/chat",
+        "destination": "https://www.kairosdetectives.com/chat/chat.html",
+        "type": 302
+      },
+      {
+        "source": "/camaleontv/index.html",
+        "destination": "https://www.kairosdetectives.com/camaleontv/index.html",
+        "type": 302
+      },
+      {
+        "source": "/finale.html",
+        "destination": "https://www.kairosdetectives.com/risolvi/finale.html",
+        "type": 302
+      }
+    ]
+  }
+}
