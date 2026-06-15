@@ -293,23 +293,27 @@ export default function HomePage() {
 
             ))}
 
-            {/* CLASSIFIED */}
+            {/* SYNTHETIC CALM */}
 
-            <div className="relative overflow-hidden rounded-[28px] border border-dashed border-white/10 bg-white/[0.03]">
+<div className="relative overflow-hidden rounded-[28px] border border-dashed border-white/10 bg-white/[0.03]">
 
-              <div className="flex h-[420px] flex-col items-center justify-center px-6 text-center md:h-[520px]">
+  <div className="flex h-[420px] flex-col items-center justify-center px-6 text-center md:h-[520px]">
 
-                <span className="text-[11px] uppercase tracking-[0.45em] text-zinc-600 md:text-xs">
-                  Accesso limitato
-                </span>
+    <span className="text-[11px] uppercase tracking-[0.45em] text-zinc-600 md:text-xs">
+      Capitolo II
+    </span>
 
-                <h3 className="mt-6 text-4xl uppercase text-zinc-500 md:text-5xl">
-                  Classified
-                </h3>
+    <h3 className="mt-6 text-4xl uppercase text-zinc-500 md:text-5xl">
+      Synthetic Calm
+    </h3>
 
-              </div>
+    <p className="mt-4 text-xs uppercase tracking-[0.35em] text-red-500">
+      Coming Soon
+    </p>
 
-            </div>
+  </div>
+
+</div>
 
             {/* REDACTED */}
 
